@@ -1,0 +1,26 @@
+{
+  "Version": 1,
+  "ProjectMap": {
+    "828e7569-4467-405a-86e7-e03d60d32584": {
+      "ProjectGuid": "828e7569-4467-405a-86e7-e03d60d32584",
+      "DisplayName": "GFresh.Infra",
+      "ColorIndex": 0
+    },
+    "f24b44d1-2cbb-43e8-8cbb-91c54eb2a63d": {
+      "ProjectGuid": "f24b44d1-2cbb-43e8-8cbb-91c54eb2a63d",
+      "DisplayName": "GFresh.Core",
+      "ColorIndex": 1
+    },
+    "a2fe74e1-b743-11d0-ae1a-00a0c90fffc3": {
+      "ProjectGuid": "a2fe74e1-b743-11d0-ae1a-00a0c90fffc3",
+      "DisplayName": "Miscellaneous Files",
+      "ColorIndex": -1
+    },
+    "e25d8c04-6de6-4c82-97c0-2ad937a70feb": {
+      "ProjectGuid": "e25d8c04-6de6-4c82-97c0-2ad937a70feb",
+      "DisplayName": "GFresh.API",
+      "ColorIndex": 2
+    }
+  },
+  "NextColorIndex": 3
+}
