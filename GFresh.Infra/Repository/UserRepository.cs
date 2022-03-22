@@ -20,6 +20,15 @@ namespace GFresh.Infra.Repository
             this._dbContext = dbContext;
         }
 
+        public List<Invoice> DisplayInvoice(int customerId)
+        {
+            var p = new DynamicParameters();
+            p.Add("@customer_id", customerId, dbType: DbType.Int32);
+            IEnumerable<Invoice> result =
+            _dbContext.Connection.Query<Invoice>("User_Package.DisplayInvoice", p, commandType: CommandType.StoredProcedure);
+            return result.ToList();
+        }
+
         public async Task<List<Category>> GetAllCategorsAndProduct()
         {
             var result = await _dbContext.Connection.QueryAsync<Category, Product, Category>("User_Package.GetAllCategorsAndProduct",
@@ -51,9 +60,14 @@ namespace GFresh.Infra.Repository
             return finalresult;
         }
 
-    
+        public List<BillingOrders> PayOrder()
+        {
+            IEnumerable<BillingOrders> result =
+           _dbContext.Connection.Query<BillingOrders>("User_Package.PayOrder", commandType: CommandType.StoredProcedure);
+            return result.ToList();
+        }
 
-    public string Register(RegisterUser registerUser)
+        public string Register(RegisterUser registerUser)
         {
 
             var row = new DynamicParameters();
@@ -71,6 +85,15 @@ namespace GFresh.Infra.Repository
 
         }
 
+        public List<SearchBarCode> SearchBarcode(string barCode)
+        {
+            var p = new DynamicParameters();
+            p.Add("@bar_code", barCode, dbType: DbType.String);
+            IEnumerable<SearchBarCode> result =
+            _dbContext.Connection.Query<SearchBarCode>("User_Package.SearchBarcode", p, commandType: CommandType.StoredProcedure);
+            return result.ToList();
+        }
+
         public List<ProductSearch> SearchOfProduct(Product product)
         {
             var p = new DynamicParameters();
@@ -83,5 +106,18 @@ namespace GFresh.Infra.Repository
             return result.ToList();
         }
 
+        public bool UpdateCustomerProfile(Customer customer)
+        {
+            var p = new DynamicParameters();
+            p.Add("@customer_Id", customer.CusID, dbType: DbType.Int32);
+            p.Add("@first_Name", customer.FirstName, dbType: DbType.String);
+            p.Add("@last_Name", customer.LastName, dbType: DbType.String);
+            p.Add("@cus_email", customer.Email, dbType: DbType.String);
+            p.Add("@image_name", customer.ImageName, dbType: DbType.String);
+
+
+            var result = _dbContext.Connection.Query<Customer>("User_Package.UpdateCustomerProfile", p, commandType: CommandType.StoredProcedure);
+            return true;
+        }
     }
 }

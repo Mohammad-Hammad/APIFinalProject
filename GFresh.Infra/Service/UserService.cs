@@ -17,9 +17,19 @@ namespace GFresh.Infra.Service
             this._userRepository = userRepository;
         }
 
+        public List<Invoice> DisplayInvoice(int customerId)
+        {
+            return _userRepository.DisplayInvoice(customerId);
+        }
+
         public Task<List<Category>> GetAllCategorsAndProduct()
         {
             return _userRepository.GetAllCategorsAndProduct();
+        }
+
+        public List<BillingOrders> PayOrder()
+        {
+            return _userRepository.PayOrder();
         }
 
         public string Register(RegisterUser registerUser)
@@ -27,9 +37,20 @@ namespace GFresh.Infra.Service
             return _userRepository.Register(registerUser);
         }
 
+        public List<SearchBarCode> SearchBarcode(string barCode)
+        {
+            return _userRepository.SearchBarcode(barCode);
+        }
+
         public List<ProductSearch> SearchOfProduct(Product product)
         {
             return _userRepository.SearchOfProduct(product);
+        }
+
+        public bool UpdateCustomerProfile(Customer customer)
+        {
+            return _userRepository.UpdateCustomerProfile(customer);
+
         }
     }
 }

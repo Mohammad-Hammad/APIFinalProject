@@ -13,6 +13,13 @@ namespace GFresh.Core.Repository
         public Task<List<Category>> GetAllCategorsAndProduct();
         public List<ProductSearch> SearchOfProduct(Product product);
 
+        List<BillingOrders> PayOrder();
+        List<Invoice> DisplayInvoice(int customerId);
+        List<SearchBarCode> SearchBarcode(string barCode);
+        bool UpdateCustomerProfile(Customer customer);
+           
+
+
 
     }
 }
