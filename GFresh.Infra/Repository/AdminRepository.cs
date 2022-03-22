@@ -127,5 +127,10 @@ namespace GFresh.Infra.Repository
             var result = _dbContext.Connection.Query<Admins>("Admin_Package.UpdateAdminProfile", p, commandType: CommandType.StoredProcedure);
             return true;
         }
+        public List<UserRegisteredDetails> ViewUserRegisteredDetails()
+        {
+            IEnumerable<UserRegisteredDetails> result = _dbContext.Connection.Query<UserRegisteredDetails>("Admin_Package.ViewUserRegisteredDetails", commandType: CommandType.StoredProcedure);
+            return result.ToList();
+        }
     }
 }

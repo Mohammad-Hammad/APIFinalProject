@@ -128,5 +128,11 @@ namespace GFresh.API.Controllers
         {
             return _adminService.ViewAdminProfile(id);
         }
+        [HttpGet]
+        [Route("ViewUserRegisteredDetails")]
+        public List<UserRegisteredDetails> ViewUserRegisteredDetails()
+        {
+            return _adminService.ViewUserRegisteredDetails();
+        }
     }
 }

@@ -78,5 +78,9 @@ namespace GFresh.Infra.Service
         {
             return _adminRepository.UpdateAdminProfile(admins);
         }
+        public List<UserRegisteredDetails> ViewUserRegisteredDetails()
+        {
+            return _adminRepository.ViewUserRegisteredDetails();
+        }
     }
 }
