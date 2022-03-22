@@ -109,5 +109,23 @@ namespace GFresh.Infra.Repository
             var result = _dbContext.Connection.Query<MonthlyRep>("Admin_Package.MonthlyReport", commandType: CommandType.StoredProcedure);
             return result.ToList();
         }
+        public List<AdminProfile> ViewAdminProfile(int id)
+        {
+            var p = new DynamicParameters();
+            p.Add("Ad_ID", id, dbType: DbType.Int32);
+            IEnumerable<AdminProfile> result = _dbContext.Connection.Query<AdminProfile>("Admin_Package.ViewAdminProfile", p, commandType: CommandType.StoredProcedure);
+            return result.ToList();
+        }
+        public bool UpdateAdminProfile(Admins admins)
+        {
+            var p = new DynamicParameters();
+            p.Add("@Ad_ID", admins.AdminID, dbType: DbType.Int32);
+            p.Add("@Fname", admins.FirstName, dbType: DbType.String);
+            p.Add("@Lname", admins.LastName, dbType: DbType.String);
+            p.Add("@Mail", admins.Email, dbType: DbType.String);
+            p.Add("@ImagePath", admins.ImageName, dbType: DbType.String);
+            var result = _dbContext.Connection.Query<Admins>("Admin_Package.UpdateAdminProfile", p, commandType: CommandType.StoredProcedure);
+            return true;
+        }
     }
 }

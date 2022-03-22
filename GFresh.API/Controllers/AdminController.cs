@@ -114,5 +114,19 @@ namespace GFresh.API.Controllers
         {
             return _adminService.MonthlyReport();
         }
+        [HttpPost]
+        [Route("UpdateViewAdminProfile")]
+        [ProducesResponseType(typeof(List<Admins>), StatusCodes.Status200OK)]
+        [ProducesResponseType(StatusCodes.Status400BadRequest)]
+        public bool UpdateAdminProfile([FromBody] Admins admins)
+        {
+            return _adminService.UpdateAdminProfile(admins);
+        }
+        [HttpGet]
+        [Route("ViewAdminProfile/{id}")]
+        public List<AdminProfile> ViewAdminProfile(int id)
+        {
+            return _adminService.ViewAdminProfile(id);
+        }
     }
 }

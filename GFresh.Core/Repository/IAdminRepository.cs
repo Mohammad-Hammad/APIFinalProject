@@ -18,7 +18,10 @@ namespace GFresh.Core.Repository
         bool UpdateProduct(Product product);
         bool DeleteProduct(int id);
         public List<SerachOrdersDate> SerachOrdersBetweenTwoDates(DateTime DateFrom, DateTime DateTo);
+        public List<AdminProfile> ViewAdminProfile(int id);
+        public bool UpdateAdminProfile(Admins admins);
         public List<MonthlyRep> MonthlyReport();
+
 
     }
 }
