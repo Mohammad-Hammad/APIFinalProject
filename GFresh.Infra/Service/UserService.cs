@@ -17,6 +17,11 @@ namespace GFresh.Infra.Service
             this._userRepository = userRepository;
         }
 
+        public bool CreateCredit(Credits newCredites)
+        {
+            return _userRepository.CreateCredit(newCredites);
+        }
+
         public List<Invoice> DisplayInvoice(int customerId)
         {
             return _userRepository.DisplayInvoice(customerId);
@@ -37,7 +42,7 @@ namespace GFresh.Infra.Service
             return _userRepository.Register(registerUser);
         }
 
-        public List<SearchBarCode> SearchBarcode(string barCode)
+        public SearchBarCode SearchBarcode(string barCode)
         {
             return _userRepository.SearchBarcode(barCode);
         }
@@ -51,6 +56,11 @@ namespace GFresh.Infra.Service
         {
             return _userRepository.UpdateCustomerProfile(customer);
 
+        }
+
+        public ViewProfile ViewCustomerProfile(string cus_id)
+        {
+            return _userRepository.ViewCustomerProfile(cus_id);
         }
     }
 }

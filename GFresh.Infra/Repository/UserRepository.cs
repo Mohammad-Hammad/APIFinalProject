@@ -20,6 +20,19 @@ namespace GFresh.Infra.Repository
             this._dbContext = dbContext;
         }
 
+        public bool CreateCredit(Credits newCredites)
+        {
+            var p = new DynamicParameters();
+            p.Add("@card_name", newCredites.CardName, dbType: DbType.String);
+            p.Add("@c_amount", newCredites.Amount, dbType: DbType.Double);
+            p.Add("@card_num", newCredites.CardNumber, dbType: DbType.Int32);
+            p.Add("@cus_id", newCredites.CustomerID, dbType: DbType.Int32);
+           
+            var result = _dbContext.Connection.Query<Credits>("User_Package.CreateCredit",
+                p, commandType: CommandType.StoredProcedure);
+            return true;
+        }
+
         public List<Invoice> DisplayInvoice(int customerId)
         {
             var p = new DynamicParameters();
@@ -85,13 +98,14 @@ namespace GFresh.Infra.Repository
 
         }
 
-        public List<SearchBarCode> SearchBarcode(string barCode)
+        public SearchBarCode SearchBarcode(string barCode)
         {
             var p = new DynamicParameters();
             p.Add("@bar_code", barCode, dbType: DbType.String);
-            IEnumerable<SearchBarCode> result =
-            _dbContext.Connection.Query<SearchBarCode>("User_Package.SearchBarcode", p, commandType: CommandType.StoredProcedure);
-            return result.ToList();
+            var result =
+            _dbContext.Connection.Query<SearchBarCode>("User_Package.SearchBarcode",
+            p, commandType: CommandType.StoredProcedure).SingleOrDefault<SearchBarCode>();
+            return result;
         }
 
         public List<ProductSearch> SearchOfProduct(Product product)
@@ -118,6 +132,16 @@ namespace GFresh.Infra.Repository
 
             var result = _dbContext.Connection.Query<Customer>("User_Package.UpdateCustomerProfile", p, commandType: CommandType.StoredProcedure);
             return true;
+        }
+
+        public ViewProfile ViewCustomerProfile(string cus_id)
+        {
+            var p = new DynamicParameters();
+            p.Add("@customer_id", cus_id, dbType: DbType.Int32);
+            var result =
+            _dbContext.Connection.Query<ViewProfile>("User_Package.ViewCustomerProfile",
+            p, commandType: CommandType.StoredProcedure).SingleOrDefault<ViewProfile>();
+            return result;
         }
     }
 }

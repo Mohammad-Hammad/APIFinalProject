@@ -66,21 +66,44 @@ namespace GFresh.API.Controllers
 
         [HttpPost]
         [Route("searchBarCode/{barCode}")]
-        [ProducesResponseType(typeof(List<Invoice>), StatusCodes.Status200OK)]
+        [ProducesResponseType(typeof(SearchBarCode), StatusCodes.Status200OK)]
         [ProducesResponseType(StatusCodes.Status400BadRequest)]
-        public List<SearchBarCode> SearchBarcode(string barCode)
+        public SearchBarCode SearchBarcode(string barCode)
         {
             return _userServic.SearchBarcode(barCode);
         }
 
 
         [HttpPut]
+        [Route("updateCustomer")]
         [ProducesResponseType(typeof(Customer), StatusCodes.Status200OK)]
         [ProducesResponseType(StatusCodes.Status400BadRequest)]
         public bool UpdateCustomerProfile([FromBody] Customer customer)
         {
             return _userServic.UpdateCustomerProfile(customer);
         }
+
+
+        [HttpGet]
+        [Route("viewCustomer/{cus_id}")]
+        [ProducesResponseType(typeof(ViewProfile), StatusCodes.Status200OK)]
+        [ProducesResponseType(StatusCodes.Status400BadRequest)]
+        public ViewProfile ViewCustomerProfile(string cus_id)
+        {
+
+            return _userServic.ViewCustomerProfile(cus_id);
+        }
+
+        [HttpPost]
+        [Route("newCredite")]
+        [ProducesResponseType(typeof(Credits), StatusCodes.Status200OK)]
+        [ProducesResponseType(StatusCodes.Status400BadRequest)]
+
+        public bool CreateCredit([FromBody]Credits newCredites)
+        {
+            return _userServic.CreateCredit(newCredites);
+        }
+
 
     }
 }

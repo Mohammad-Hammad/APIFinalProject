@@ -15,11 +15,10 @@ namespace GFresh.Core.Repository
 
         List<BillingOrders> PayOrder();
         List<Invoice> DisplayInvoice(int customerId);
-        List<SearchBarCode> SearchBarcode(string barCode);
+        SearchBarCode SearchBarcode(string barCode);
         bool UpdateCustomerProfile(Customer customer);
-           
 
-
-
+        ViewProfile ViewCustomerProfile(string cus_id);
+        bool CreateCredit(Credits newCredites);
     }
 }
