@@ -134,5 +134,12 @@ namespace GFresh.API.Controllers
         {
             return _adminService.ViewUserRegisteredDetails();
         }
+
+        [HttpGet]
+        [Route("AnuualReport")]
+        public List<AnuualRep> AnuualReport()
+        {
+            return _adminService.AnuualReport();
+        }
     }
 }

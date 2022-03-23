@@ -82,5 +82,10 @@ namespace GFresh.Infra.Service
         {
             return _adminRepository.ViewUserRegisteredDetails();
         }
+
+        public List<AnuualRep> AnuualReport()
+        {
+            return _adminRepository.AnuualReport();
+        }
     }
 }

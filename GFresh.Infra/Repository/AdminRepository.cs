@@ -11,6 +11,7 @@ using System.Text;
 
 namespace GFresh.Infra.Repository
 {
+
     public class AdminRepository : IAdminRepository
     {
         private readonly IDbContext _dbContext;
@@ -130,6 +131,12 @@ namespace GFresh.Infra.Repository
         public List<UserRegisteredDetails> ViewUserRegisteredDetails()
         {
             IEnumerable<UserRegisteredDetails> result = _dbContext.Connection.Query<UserRegisteredDetails>("Admin_Package.ViewUserRegisteredDetails", commandType: CommandType.StoredProcedure);
+            return result.ToList();
+        }
+
+        public List<AnuualRep> AnuualReport()
+        {
+            var result = _dbContext.Connection.Query<AnuualRep>("Admin_Package.AnuualReport", commandType: CommandType.StoredProcedure);
             return result.ToList();
         }
     }

@@ -28,3 +28,12 @@ C:\Users\moham\aaaaa\APIFinalProject\GFresh.Core\obj\Debug\netcoreapp3.1\GFresh.
 C:\Users\moham\aaaaa\APIFinalProject\GFresh.Core\obj\Debug\netcoreapp3.1\GFresh.Core.csproj.CoreCompileInputs.cache
 C:\Users\moham\aaaaa\APIFinalProject\GFresh.Core\obj\Debug\netcoreapp3.1\GFresh.Core.dll
 C:\Users\moham\aaaaa\APIFinalProject\GFresh.Core\obj\Debug\netcoreapp3.1\GFresh.Core.pdb
+C:\Users\LEGION\OneDrive - Hashemite University\Desktop\new\APIFinalProject\GFresh.Core\bin\Debug\netcoreapp3.1\GFresh.Core.deps.json
+C:\Users\LEGION\OneDrive - Hashemite University\Desktop\new\APIFinalProject\GFresh.Core\bin\Debug\netcoreapp3.1\GFresh.Core.dll
+C:\Users\LEGION\OneDrive - Hashemite University\Desktop\new\APIFinalProject\GFresh.Core\bin\Debug\netcoreapp3.1\GFresh.Core.pdb
+C:\Users\LEGION\OneDrive - Hashemite University\Desktop\new\APIFinalProject\GFresh.Core\obj\Debug\netcoreapp3.1\GFresh.Core.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\LEGION\OneDrive - Hashemite University\Desktop\new\APIFinalProject\GFresh.Core\obj\Debug\netcoreapp3.1\GFresh.Core.AssemblyInfoInputs.cache
+C:\Users\LEGION\OneDrive - Hashemite University\Desktop\new\APIFinalProject\GFresh.Core\obj\Debug\netcoreapp3.1\GFresh.Core.AssemblyInfo.cs
+C:\Users\LEGION\OneDrive - Hashemite University\Desktop\new\APIFinalProject\GFresh.Core\obj\Debug\netcoreapp3.1\GFresh.Core.csproj.CoreCompileInputs.cache
+C:\Users\LEGION\OneDrive - Hashemite University\Desktop\new\APIFinalProject\GFresh.Core\obj\Debug\netcoreapp3.1\GFresh.Core.dll
+C:\Users\LEGION\OneDrive - Hashemite University\Desktop\new\APIFinalProject\GFresh.Core\obj\Debug\netcoreapp3.1\GFresh.Core.pdb

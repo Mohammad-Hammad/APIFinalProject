@@ -21,6 +21,7 @@ namespace GFresh.Core.Repository
         public List<AdminProfile> ViewAdminProfile(int id);
         public bool UpdateAdminProfile(Admins admins);
         public List<MonthlyRep> MonthlyReport();
+        public List<AnuualRep> AnuualReport();
 
         public List<UserRegisteredDetails> ViewUserRegisteredDetails();
 
