@@ -36,7 +36,8 @@ namespace GFresh.Infra.Service
                 var tokenHandler = new JwtSecurityTokenHandler();
                 var tokenKey = Encoding.ASCII.GetBytes("[AboodDagash Assi]");
 
-
+                string CustomerId = result.CustomerID.ToString();
+                string AdminId = result.AdminID.ToString();
 
                 var tokenDescriptor = new SecurityTokenDescriptor
                 {
@@ -44,8 +45,9 @@ namespace GFresh.Infra.Service
                 {
                     new Claim(ClaimTypes.Name, result.UserName),
                     new Claim(ClaimTypes.Role, result.RoleID),
+                    new Claim(ClaimTypes.NameIdentifier, CustomerId),
                 }),
-
+                  
 
                     Expires = DateTime.UtcNow.AddMinutes(30),
                     SigningCredentials = new SigningCredentials(new SymmetricSecurityKey(tokenKey), SecurityAlgorithms.HmacSha256Signature)

@@ -3,7 +3,9 @@ using GFresh.Core.DTO;
 using GFresh.Core.Service;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
+using System;
 using System.Collections.Generic;
+using System.IO;
 using System.Threading.Tasks;
 
 namespace GFresh.API.Controllers
@@ -102,6 +104,29 @@ namespace GFresh.API.Controllers
         public bool CreateCredit([FromBody]Credits newCredites)
         {
             return _userServic.CreateCredit(newCredites);
+        }
+        [HttpPost]
+        [Route("UploadImg")]
+        public Customer UploadImage()
+        {
+            try
+            {
+                var Image = Request.Form.Files[0];
+                var ImageName = Guid.NewGuid().ToString() + Image.FileName;
+                var fullPath = Path.Combine("C:\\Users\\LEGION\\OneDrive - Hashemite University\\Desktop\\HyperMarket\\src\\assets\\images", ImageName);
+                using (var stream = new FileStream(fullPath, FileMode.Create))
+                {
+                    Image.CopyTo(stream);
+                }
+
+                Customer customer = new Customer();
+                customer.ImageName = ImageName;
+                return customer;
+            }
+            catch
+            {
+                return null;
+            }
         }
 
 

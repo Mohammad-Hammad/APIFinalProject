@@ -85,7 +85,7 @@ namespace GFresh.Infra.Repository
 
             var row = new DynamicParameters();
             row.Add("@F_Name", registerUser.FirstName, dbType: DbType.String);
-            row.Add("@L_Name", registerUser.LaststName, dbType: DbType.String);
+            row.Add("@L_Name", registerUser.LastName, dbType: DbType.String);
             row.Add("@E_Email", registerUser.Email, dbType: DbType.String);
             row.Add("@I_image", registerUser.ImageName, dbType: DbType.String);
             row.Add("@U_Name", registerUser.UserName, dbType: DbType.String);
