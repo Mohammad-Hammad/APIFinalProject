@@ -8,7 +8,7 @@ namespace GFresh.Core.Repository
 {
     public interface IAdminRepository
     {
-        public NumOfRegisteredCustomers NumberOfCustomers();
+        public List<NumOfRegisteredCustomers> NumberOfCustomers();
         bool CreateCategory(Category category);
         List<Category> GetAllCategories();
         bool UpdateCategory(Category category);
@@ -25,6 +25,11 @@ namespace GFresh.Core.Repository
 
         public List<UserRegisteredDetails> ViewUserRegisteredDetails();
 
+
+        public List<MonthlyRepSum> MonthlyReportSUM();
+        public List<MonthlyRepCount> MonthlyReportCount();
+        public List<AnuualRepSum> AnuualReportSUM();
+        public List<AnuualRepCount> AnuualReportCount();
 
     }
 }

@@ -57,7 +57,7 @@ namespace GFresh.Infra.Service
         {
             return _adminRepository.UpdateProduct(product);
         }
-        public NumOfRegisteredCustomers NumberOfCustomers()
+        public List<NumOfRegisteredCustomers> NumberOfCustomers()
         {
             return _adminRepository.NumberOfCustomers();
         }
@@ -86,6 +86,23 @@ namespace GFresh.Infra.Service
         public List<AnuualRep> AnuualReport()
         {
             return _adminRepository.AnuualReport();
+        }
+
+        public List<MonthlyRepSum> MonthlyReportSUM()
+        {
+            return _adminRepository.MonthlyReportSUM();
+        }
+        public List<MonthlyRepCount> MonthlyReportCount()
+        {
+            return _adminRepository.MonthlyReportCount();
+        }
+        public List<AnuualRepSum> AnuualReportSUM()
+        {
+            return _adminRepository.AnuualReportSUM();
+        }
+        public List<AnuualRepCount> AnuualReportCount()
+        {
+            return _adminRepository.AnuualReportCount();
         }
     }
 }

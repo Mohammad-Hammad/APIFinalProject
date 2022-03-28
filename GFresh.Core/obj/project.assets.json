@@ -4701,19 +4701,19 @@
     ]
   },
   "packageFolders": {
-    "C:\\Users\\LEGION\\.nuget\\packages\\": {}
+    "C:\\Users\\moham\\.nuget\\packages\\": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\LEGION\\OneDrive - Hashemite University\\Desktop\\new\\APIFinalProject\\GFresh.Core\\GFresh.Core.csproj",
+      "projectUniqueName": "C:\\Users\\moham\\28-3\\APIFinalProject\\GFresh.Core\\GFresh.Core.csproj",
       "projectName": "GFresh.Core",
-      "projectPath": "C:\\Users\\LEGION\\OneDrive - Hashemite University\\Desktop\\new\\APIFinalProject\\GFresh.Core\\GFresh.Core.csproj",
-      "packagesPath": "C:\\Users\\LEGION\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\LEGION\\OneDrive - Hashemite University\\Desktop\\new\\APIFinalProject\\GFresh.Core\\obj\\",
+      "projectPath": "C:\\Users\\moham\\28-3\\APIFinalProject\\GFresh.Core\\GFresh.Core.csproj",
+      "packagesPath": "C:\\Users\\moham\\.nuget\\packages\\",
+      "outputPath": "C:\\Users\\moham\\28-3\\APIFinalProject\\GFresh.Core\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
-        "C:\\Users\\LEGION\\AppData\\Roaming\\NuGet\\NuGet.Config",
+        "C:\\Users\\moham\\AppData\\Roaming\\NuGet\\NuGet.Config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
       ],
       "originalTargetFrameworks": [
@@ -4767,7 +4767,7 @@
             "privateAssets": "all"
           }
         },
-        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\5.0.403\\RuntimeIdentifierGraph.json"
+        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\6.0.100\\RuntimeIdentifierGraph.json"
       }
     }
   }

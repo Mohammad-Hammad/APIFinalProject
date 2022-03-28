@@ -98,7 +98,7 @@ namespace GFresh.API.Controllers
         }
         [HttpGet]
         [Route("NumberOfCustomers")]
-        public NumOfRegisteredCustomers NumberOfCustomers()
+        public List<NumOfRegisteredCustomers> NumberOfCustomers()
         {
             return _adminService.NumberOfCustomers();
         }
@@ -140,6 +140,76 @@ namespace GFresh.API.Controllers
         public List<AnuualRep> AnuualReport()
         {
             return _adminService.AnuualReport();
+        }
+        [HttpPost]
+        [Route("UploadImgPro")]
+        public Product UploadImagePro()
+        {
+            try
+            {
+                var Image = Request.Form.Files[0];
+                var ImageName = Guid.NewGuid().ToString() + Image.FileName;
+                var fullPath = Path.Combine("C:\\Users\\moham\\Desktop\\HyperMarket\\src\\assets\\images", ImageName);
+                using (var stream = new FileStream(fullPath, FileMode.Create))
+                {
+                    Image.CopyTo(stream);
+                }
+
+                Product product = new Product();
+                product.ImageName = ImageName;
+                return product;
+            }
+            catch
+            {
+                return null;
+            }
+        }
+        [HttpPost]
+        [Route("UploadImageAdmin")]
+        public Admins UploadImageAdmin()
+        {
+            try
+            {
+                var Image = Request.Form.Files[0];
+                var ImageName = Guid.NewGuid().ToString() + Image.FileName;
+                var fullPath = Path.Combine("C:\\Users\\moham\\Desktop\\HyperMarket\\src\\assets\\images", ImageName);
+                using (var stream = new FileStream(fullPath, FileMode.Create))
+                {
+                    Image.CopyTo(stream);
+                }
+
+                Admins admins = new Admins();
+                admins.ImageName = ImageName;
+                return admins;
+            }
+            catch
+            {
+                return null;
+            }
+        }
+        [HttpGet]
+        [Route("MonthlyReportSUM")]
+        public List<MonthlyRepSum> MonthlyReportSUM()
+        {
+            return _adminService.MonthlyReportSUM();
+        }
+        [HttpGet]
+        [Route("MonthlyReportCount")]
+        public List<MonthlyRepCount> MonthlyReportCount()
+        {
+            return _adminService.MonthlyReportCount();
+        }
+        [HttpGet]
+        [Route("AnuualReportSUM")]
+        public List<AnuualRepSum> AnuualReportSUM()
+        {
+            return _adminService.AnuualReportSUM();
+        }
+        [HttpGet]
+        [Route("AnuualReportCount")]
+        public List<AnuualRepCount> AnuualReportCount()
+        {
+            return _adminService.AnuualReportCount();
         }
     }
 }

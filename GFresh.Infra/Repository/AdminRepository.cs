@@ -92,10 +92,10 @@ namespace GFresh.Infra.Repository
             var result = _dbContext.Connection.Query<Product>("Admin_Package.UpdateProduct", p, commandType: CommandType.StoredProcedure);
             return true;
         }
-        public NumOfRegisteredCustomers NumberOfCustomers()
+        public List<NumOfRegisteredCustomers> NumberOfCustomers()
         {
             var result = _dbContext.Connection.Query<NumOfRegisteredCustomers>("Admin_Package.NumberOfCustomerRegistered", commandType: CommandType.StoredProcedure);
-            return result.SingleOrDefault();
+            return result.ToList();
         }
         public List<SerachOrdersDate> SerachOrdersBetweenTwoDates(DateTime DateFrom, DateTime DateTo)
         {
@@ -137,6 +137,28 @@ namespace GFresh.Infra.Repository
         public List<AnuualRep> AnuualReport()
         {
             var result = _dbContext.Connection.Query<AnuualRep>("Admin_Package.AnuualReport", commandType: CommandType.StoredProcedure);
+            return result.ToList();
+        }
+
+
+        public List<MonthlyRepSum> MonthlyReportSUM()
+        {
+            var result = _dbContext.Connection.Query<MonthlyRepSum>("Admin_Package.MonthlyReportSUM", commandType: CommandType.StoredProcedure);
+            return result.ToList();
+        }
+        public List<MonthlyRepCount> MonthlyReportCount()
+        {
+            var result = _dbContext.Connection.Query<MonthlyRepCount>("Admin_Package.MonthlyReportCount", commandType: CommandType.StoredProcedure);
+            return result.ToList();
+        }
+        public List<AnuualRepSum> AnuualReportSUM()
+        {
+            var result = _dbContext.Connection.Query<AnuualRepSum>("Admin_Package.AnuualReportSUM", commandType: CommandType.StoredProcedure);
+            return result.ToList();
+        }
+        public List<AnuualRepCount> AnuualReportCount()
+        {
+            var result = _dbContext.Connection.Query<AnuualRepCount>("Admin_Package.AnuualReportCount", commandType: CommandType.StoredProcedure);
             return result.ToList();
         }
     }
