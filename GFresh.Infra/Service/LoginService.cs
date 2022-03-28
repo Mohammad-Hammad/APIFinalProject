@@ -46,6 +46,7 @@ namespace GFresh.Infra.Service
                     new Claim(ClaimTypes.Name, result.UserName),
                     new Claim(ClaimTypes.Role, result.RoleID),
                     new Claim(ClaimTypes.NameIdentifier, CustomerId),
+                    new Claim(ClaimTypes.PrimarySid, AdminId),
                 }),
                   
 
