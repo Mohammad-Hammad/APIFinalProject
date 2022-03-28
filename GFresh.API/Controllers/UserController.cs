@@ -66,7 +66,7 @@ namespace GFresh.API.Controllers
             return _userServic.DisplayInvoice(customerId);
         }
 
-        [HttpPost]
+        [HttpGet]
         [Route("searchBarCode/{barCode}")]
         [ProducesResponseType(typeof(SearchBarCode), StatusCodes.Status200OK)]
         [ProducesResponseType(StatusCodes.Status400BadRequest)]
