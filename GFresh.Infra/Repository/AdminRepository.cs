@@ -34,7 +34,6 @@ namespace GFresh.Infra.Repository
         {
             var p = new DynamicParameters();
             p.Add("@ProName", product.ProName, dbType: DbType.String);
-            p.Add("@SALE_", product.Sale, dbType: DbType.Int32);
             p.Add("@ProPrice", product.ProPrice, dbType: DbType.Double);
             p.Add("@ImagePath", product.ImageName, dbType: DbType.String);
             p.Add("@Category_ID", product.CategoryID, dbType: DbType.Int32);
