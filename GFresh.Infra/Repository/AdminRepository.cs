@@ -109,12 +109,13 @@ namespace GFresh.Infra.Repository
             var result = _dbContext.Connection.Query<MonthlyRep>("Admin_Package.MonthlyReport", commandType: CommandType.StoredProcedure);
             return result.ToList();
         }
-        public List<AdminProfile> ViewAdminProfile(int id)
+        public AdminProfile ViewAdminProfile(int id)
         {
             var p = new DynamicParameters();
             p.Add("Ad_ID", id, dbType: DbType.Int32);
             IEnumerable<AdminProfile> result = _dbContext.Connection.Query<AdminProfile>("Admin_Package.ViewAdminProfile", p, commandType: CommandType.StoredProcedure);
-            return result.ToList();
+            return result.SingleOrDefault<AdminProfile>();
+
         }
         public bool UpdateAdminProfile(Admins admins)
         {
@@ -158,6 +159,30 @@ namespace GFresh.Infra.Repository
         public List<AnuualRepCount> AnuualReportCount()
         {
             var result = _dbContext.Connection.Query<AnuualRepCount>("Admin_Package.AnuualReportCount", commandType: CommandType.StoredProcedure);
+            return result.ToList();
+        }
+
+        public bool CreateAdmin(Admins admins)
+        {
+            var p = new DynamicParameters();
+            p.Add("@Fname", admins.FirstName, dbType: DbType.String);
+            p.Add("@Lname", admins.LastName, dbType: DbType.String);
+            p.Add("@Mail", admins.Email, dbType: DbType.String);
+            p.Add("@Image", admins.ImageName, dbType: DbType.String);
+            var result = _dbContext.Connection.Query<Admins>("Admin_Package.CreateAdmin", p, commandType: CommandType.StoredProcedure);
+            return true;
+        }
+
+        public bool DeleteAdmin(int id)
+        {
+            var p = new DynamicParameters();
+            p.Add("@AdID", id, dbType: DbType.Int32);
+            var result = _dbContext.Connection.Query<Admins>("Admin_Package.DeleteAdmin", p, commandType: CommandType.StoredProcedure);
+            return true;
+        }
+        public List<getAllAdmins> GetAllAdmins()
+        {
+            IEnumerable<getAllAdmins> result = _dbContext.Connection.Query<getAllAdmins>("Admin_Package.GetAllAdmins", commandType: CommandType.StoredProcedure);
             return result.ToList();
         }
     }

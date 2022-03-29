@@ -69,7 +69,7 @@ namespace GFresh.Infra.Service
         {
             return _adminRepository.MonthlyReport();
         }
-        public List<AdminProfile> ViewAdminProfile(int id)
+        public AdminProfile ViewAdminProfile(int id)
         {
             return _adminRepository.ViewAdminProfile(id);
 
@@ -103,6 +103,19 @@ namespace GFresh.Infra.Service
         public List<AnuualRepCount> AnuualReportCount()
         {
             return _adminRepository.AnuualReportCount();
+        }
+        public bool CreateAdmin(Admins admins)
+        {
+            return _adminRepository.CreateAdmin(admins);
+        }
+
+        public bool DeleteAdmin(int id)
+        {
+            return _adminRepository.DeleteAdmin(id);
+        }
+        public List<getAllAdmins> GetAllAdmins()
+        {
+            return _adminRepository.GetAllAdmins();
         }
     }
 }

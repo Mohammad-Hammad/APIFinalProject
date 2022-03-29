@@ -102,9 +102,9 @@ namespace GFresh.API.Controllers
         {
             return _adminService.NumberOfCustomers();
         }
-        [HttpPost]
+        [HttpGet]
         [Route("SerachDates")]
-        public List<SerachOrdersDate> SerachOrdersBetweenTwoDates([FromBody]DateTime DateFrom,DateTime DateTo)
+        public List<SerachOrdersDate> SerachOrdersBetweenTwoDates([FromBody] DateTime DateFrom, DateTime DateTo)
         {
             return _adminService.SerachOrdersBetweenTwoDates(DateFrom, DateTo);
         }
@@ -114,7 +114,7 @@ namespace GFresh.API.Controllers
         {
             return _adminService.MonthlyReport();
         }
-        [HttpPost]
+        [HttpPut]
         [Route("UpdateViewAdminProfile")]
         [ProducesResponseType(typeof(List<Admins>), StatusCodes.Status200OK)]
         [ProducesResponseType(StatusCodes.Status400BadRequest)]
@@ -124,7 +124,7 @@ namespace GFresh.API.Controllers
         }
         [HttpGet]
         [Route("ViewAdminProfile/{id}")]
-        public List<AdminProfile> ViewAdminProfile(int id)
+        public AdminProfile ViewAdminProfile(int id)
         {
             return _adminService.ViewAdminProfile(id);
         }
@@ -164,6 +164,7 @@ namespace GFresh.API.Controllers
                 return null;
             }
         }
+
         [HttpPost]
         [Route("UploadImageAdmin")]
         public Admins UploadImageAdmin()
@@ -210,6 +211,26 @@ namespace GFresh.API.Controllers
         public List<AnuualRepCount> AnuualReportCount()
         {
             return _adminService.AnuualReportCount();
+        }
+        [HttpPost]
+        [ProducesResponseType(typeof(List<Admins>), StatusCodes.Status200OK)]
+        [ProducesResponseType(StatusCodes.Status400BadRequest)]
+        [Route("CreateAdmin")]
+        public bool CreateAdmin(Admins admins)
+        {
+            return _adminService.CreateAdmin(admins);
+        }
+        [HttpDelete]
+        [Route("DeleteAdmin/{id}")]
+        public bool DeleteAdmin(int id)
+        {
+            return _adminService.DeleteAdmin(id);
+        }
+        [HttpGet]
+        [Route("GetAllAdmins")]
+        public List<getAllAdmins> GetAllAdmins()
+        {
+            return _adminService.GetAllAdmins();
         }
     }
 }

@@ -20,7 +20,7 @@ namespace GFresh.Core.Service
         public List<SerachOrdersDate> SerachOrdersBetweenTwoDates(DateTime DateFrom, DateTime DateTo);
         public List<MonthlyRep> MonthlyReport();
         public List<AnuualRep> AnuualReport();
-        public List<AdminProfile> ViewAdminProfile(int id);
+        public AdminProfile ViewAdminProfile(int id);
         public bool UpdateAdminProfile(Admins admins);
         public List<UserRegisteredDetails> ViewUserRegisteredDetails();
 
@@ -30,5 +30,9 @@ namespace GFresh.Core.Service
         public List<AnuualRepSum> AnuualReportSUM();
         public List<AnuualRepCount> AnuualReportCount();
 
+        bool CreateAdmin(Admins admins);
+
+        bool DeleteAdmin(int id);
+        List<getAllAdmins> GetAllAdmins();
     }
 }
