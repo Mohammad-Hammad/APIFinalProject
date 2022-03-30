@@ -12,9 +12,9 @@ namespace GFresh.Core.Service
         public string Register(RegisterUser registerUser);
         public Task<List<Category>> GetAllCategorsAndProduct();
         public List<ProductSearch> SearchOfProduct(Product product);
+        public List<ProductSearch> getAllProduct();
 
-
-        List<BillingOrders> PayOrder();
+        public List<BillingOrders> PayOrder();
         List<Invoice> DisplayInvoice(int customerId);
         SearchBarCode SearchBarcode(string barCode);
         bool UpdateCustomerProfile(Customer customer);

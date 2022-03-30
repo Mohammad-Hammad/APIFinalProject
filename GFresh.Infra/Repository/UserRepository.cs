@@ -112,14 +112,20 @@ namespace GFresh.Infra.Repository
         {
             var p = new DynamicParameters();
             p.Add("@Product_Name", product.ProName, dbType: DbType.String);
-            p.Add("@Category_Name", product.CategoryID, dbType: DbType.Int32);
 
             var result = _dbContext.Connection.Query<ProductSearch>
               ("User_Package.SearchOfProduct", p,
               commandType: CommandType.StoredProcedure);
             return result.ToList();
         }
+        public List<ProductSearch> getAllProduct()
+        {
 
+            var result = _dbContext.Connection.Query<ProductSearch>
+              ("User_Package.GETALLPRODUCT",
+              commandType: CommandType.StoredProcedure);
+            return result.ToList();
+        }
         public bool UpdateCustomerProfile(Customer customer)
         {
             var p = new DynamicParameters();

@@ -62,5 +62,9 @@ namespace GFresh.Infra.Service
         {
             return _userRepository.ViewCustomerProfile(cus_id);
         }
+        public List<ProductSearch> getAllProduct()
+        {
+            return _userRepository.getAllProduct();
+        }
     }
 }

@@ -44,9 +44,17 @@ namespace GFresh.API.Controllers
             return _userServic.SearchOfProduct(product);
 
         }
-       
+        [HttpGet]
+        [Route("getAllProduct")]
+        [ProducesResponseType(typeof(List<ProductSearch>), StatusCodes.Status200OK)]
+        [ProducesResponseType(StatusCodes.Status400BadRequest)]
+        public List<ProductSearch> getAllProduct()
+        {
+            return _userServic.getAllProduct();
+        }
 
-       
+
+
 
         [HttpGet]
         [Route("pay")]
