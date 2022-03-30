@@ -61,9 +61,9 @@ namespace GFresh.Infra.Service
         {
             return _adminRepository.NumberOfCustomers();
         }
-        public List<SerachOrdersDate> SerachOrdersBetweenTwoDates(DateTime DateFrom, DateTime DateTo)
+        public List<SerachOrdersDate> SerachOrdersBetweenTwoDates(SerachOrdersDate serachOrdersDate)
         {
-            return _adminRepository.SerachOrdersBetweenTwoDates(DateFrom, DateTo);
+            return _adminRepository.SerachOrdersBetweenTwoDates(serachOrdersDate);
         }
         public List<MonthlyRep> MonthlyReport()
         {

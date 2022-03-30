@@ -102,11 +102,13 @@ namespace GFresh.API.Controllers
         {
             return _adminService.NumberOfCustomers();
         }
-        [HttpGet]
-        [Route("SerachDates")]
-        public List<SerachOrdersDate> SerachOrdersBetweenTwoDates([FromBody] DateTime DateFrom, DateTime DateTo)
+        [HttpPost]
+        [Route("SearchDates")]
+        [ProducesResponseType(typeof(List<SerachOrdersDate>), StatusCodes.Status200OK)]
+        [ProducesResponseType(StatusCodes.Status400BadRequest)]
+        public List<SerachOrdersDate> SerachOrdersBetweenTwoDates([FromBody]SerachOrdersDate serachOrdersDate)
         {
-            return _adminService.SerachOrdersBetweenTwoDates(DateFrom, DateTo);
+            return _adminService.SerachOrdersBetweenTwoDates(serachOrdersDate);
         }
         [HttpGet]
         [Route("MonthlyReport")]

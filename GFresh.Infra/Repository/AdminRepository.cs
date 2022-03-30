@@ -96,11 +96,11 @@ namespace GFresh.Infra.Repository
             var result = _dbContext.Connection.Query<NumOfRegisteredCustomers>("Admin_Package.NumberOfCustomerRegistered", commandType: CommandType.StoredProcedure);
             return result.ToList();
         }
-        public List<SerachOrdersDate> SerachOrdersBetweenTwoDates(DateTime DateFrom, DateTime DateTo)
+        public List<SerachOrdersDate> SerachOrdersBetweenTwoDates(SerachOrdersDate serachOrdersDate)
         {
             var p = new DynamicParameters();
-            p.Add("START_DATE", DateFrom, dbType: DbType.DateTime);
-            p.Add("END_DATE", DateTo, dbType: DbType.DateTime);
+            p.Add("START_DATE", serachOrdersDate.DateFrom, dbType: DbType.DateTime);
+            p.Add("END_DATE", serachOrdersDate.DateTo, dbType: DbType.DateTime);
             var result = _dbContext.Connection.Query<SerachOrdersDate>("Admin_Package.SerachOrdersBetweenTwoDates", p, commandType: CommandType.StoredProcedure);
             return result.ToList();
         }

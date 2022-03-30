@@ -8,7 +8,8 @@ namespace GFresh.Core.DTO
     {
         public int OrderID { get; set; }
         public float TotalPrice { get; set; }
-        public DateTime OrderAT { get; set; }
+        public DateTime DateFrom { get; set; }
+        public DateTime DateTo{ get; set; }
         public int CustomerID { get; set; }
     }
 }
