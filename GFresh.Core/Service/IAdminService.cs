@@ -34,5 +34,7 @@ namespace GFresh.Core.Service
 
         bool DeleteAdmin(int id);
         List<getAllAdmins> GetAllAdmins();
+
+       
     }
 }

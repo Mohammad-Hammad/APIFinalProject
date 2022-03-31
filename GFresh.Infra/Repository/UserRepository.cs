@@ -149,5 +149,66 @@ namespace GFresh.Infra.Repository
             p, commandType: CommandType.StoredProcedure).SingleOrDefault<ViewProfile>();
             return result;
         }
+        public bool CreateTestimonial(Testimonial testimonial)
+        {
+            var p = new DynamicParameters();
+            p.Add("@Comment", testimonial.Comment, dbType: DbType.String);
+            p.Add("@CusId", testimonial.CustomerID, dbType: DbType.Int32); ;
+            var result = _dbContext.Connection.Query<Testimonial>("User_Package.CreateTestimonial", p, commandType: CommandType.StoredProcedure);
+            return true;
+        }
+
+        public bool DeleteTestimonial(int id)
+        {
+            var p = new DynamicParameters();
+            p.Add("@TID", id, dbType: DbType.Int32);
+            var result = _dbContext.Connection.Query<Testimonial>("User_Package.DeleteTestimonial", p, commandType: CommandType.StoredProcedure);
+            return true;
+        }
+
+        public bool CreateContact(Contact contact)
+        {
+            var p = new DynamicParameters();
+            p.Add("@Name", contact.Name, dbType: DbType.String);
+            p.Add("@Mail", contact.Email, dbType: DbType.String);
+            p.Add("@Subjct", contact.Subject, dbType: DbType.String);
+            p.Add("@Msg", contact.Message, dbType: DbType.String);
+            var result = _dbContext.Connection.Query<Product>("User_Package.CreateContact", p, commandType: CommandType.StoredProcedure);
+            return true;
+        }
+
+        public bool CreateAbout(About about)
+        {
+            var p = new DynamicParameters();
+            p.Add("@Image", about.Image, dbType: DbType.String);
+            p.Add("@Ftext", about.FirstText, dbType: DbType.String);
+            p.Add("@Stext", about.SecondText, dbType: DbType.String);
+            var result = _dbContext.Connection.Query<About>("User_Package.CreateAbout", p, commandType: CommandType.StoredProcedure);
+            return true;
+        }
+        public bool CreateHome(HomePage homePage)
+        {
+            var p = new DynamicParameters();
+            p.Add("@FirstImg", homePage.FirstSlider, dbType: DbType.String);
+            p.Add("@SecondImg", homePage.SecondSlider, dbType: DbType.String);
+            p.Add("@ThirdImg", homePage.ThirdSlider, dbType: DbType.String);
+            p.Add("@Ftext", homePage.FirstText, dbType: DbType.String);
+            p.Add("@Stext", homePage.SecondText, dbType: DbType.String);
+            p.Add("@Ttext", homePage.CatName, dbType: DbType.String);
+            p.Add("@Frtext", homePage.ProdName, dbType: DbType.String);
+            var result = _dbContext.Connection.Query<Product>("User_Package.CreateHome", p, commandType: CommandType.StoredProcedure);
+            return true;
+        }
+        public List<HomeDTO> GetAllHome()
+        {
+            IEnumerable<HomeDTO> result = _dbContext.Connection.Query<HomeDTO>("User_Package.GetAllHome", commandType: CommandType.StoredProcedure);
+            return result.ToList();
+        }
+        public List<AboutDTO> GetAllAbout()
+        {
+            IEnumerable<AboutDTO> result = _dbContext.Connection.Query<AboutDTO>("User_Package.GetAllAbout", commandType: CommandType.StoredProcedure);
+            return result.ToList();
+        }
     }
 }
+

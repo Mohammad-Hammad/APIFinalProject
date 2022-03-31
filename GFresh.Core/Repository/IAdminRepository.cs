@@ -38,5 +38,9 @@ namespace GFresh.Core.Repository
 
         List<getAllAdmins> GetAllAdmins();
 
+        
+
+
+
     }
 }

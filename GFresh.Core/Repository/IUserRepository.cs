@@ -21,5 +21,16 @@ namespace GFresh.Core.Repository
 
         ViewProfile ViewCustomerProfile(string cus_id);
         bool CreateCredit(Credits newCredites);
+
+        bool CreateTestimonial(Testimonial testimonial);
+
+        bool DeleteTestimonial(int id);
+
+        bool CreateContact(Contact contact);
+
+        bool CreateAbout(About about);
+        bool CreateHome(HomePage homePage);
+        List<HomeDTO> GetAllHome();
+        List<AboutDTO> GetAllAbout();
     }
 }
