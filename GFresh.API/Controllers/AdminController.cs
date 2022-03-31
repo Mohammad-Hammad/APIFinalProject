@@ -234,5 +234,187 @@ namespace GFresh.API.Controllers
         {
             return _adminService.GetAllAdmins();
         }
+
+
+
+        [HttpPost]
+        [ProducesResponseType(typeof(List<Contact>), StatusCodes.Status200OK)]
+        [ProducesResponseType(StatusCodes.Status400BadRequest)]
+        [Route("CreateContact")]
+        public bool CreateContact(Contact contact)
+        {
+            return _adminService.CreateContact(contact);
+        }
+        [HttpPost]
+        [ProducesResponseType(typeof(List<Contact>), StatusCodes.Status200OK)]
+        [ProducesResponseType(StatusCodes.Status400BadRequest)]
+        [Route("UpdateContact")]
+        public bool UpdateContact(Contact contact)
+        {
+            return _adminService.UpdateContact(contact);
+        }
+        [HttpDelete]
+        [Route("DeleteContact/{id}")]
+        public bool DeleteContact(int id)
+        {
+            return _adminService.DeleteContact(id);
+        }
+        [HttpGet]
+        [Route("GetAllContact")]
+        [ProducesResponseType(typeof(List<ContactDTO>), StatusCodes.Status200OK)]
+        public List<ContactDTO> GetAllContact()
+        {
+            return _adminService.GetAllContact();
+        }
+        [HttpPost]
+        [ProducesResponseType(typeof(About), StatusCodes.Status200OK)]
+        [ProducesResponseType(StatusCodes.Status400BadRequest)]
+        [Route("CreateAbout")]
+        public bool CreateAbout(About about)
+        {
+            return _adminService.CreateAbout(about);
+        }
+        [HttpPost]
+        [ProducesResponseType(typeof(About), StatusCodes.Status200OK)]
+        [ProducesResponseType(StatusCodes.Status400BadRequest)]
+        [Route("UpdateAbout")]
+        public bool UpdateAbout(About about)
+        {
+            return _adminService.UpdateAbout(about);
+        }
+        [HttpDelete]
+        [Route("DeleteAbout/{id}")]
+        public bool DeleteAbout(int id)
+        {
+            return _adminService.DeleteAbout(id);
+        }
+        [HttpGet]
+        [Route("GetAllAbout")]
+        [ProducesResponseType(typeof(AboutDTO), StatusCodes.Status200OK)]
+        public AboutDTO GetAllAbout()
+        {
+            return _adminService.GetAllAbout();
+        }
+        [HttpPost]
+        [ProducesResponseType(typeof(HomePage), StatusCodes.Status200OK)]
+        [ProducesResponseType(StatusCodes.Status400BadRequest)]
+        [Route("CreateHome")]
+        public bool CreateHome(HomePage homePage)
+        {
+            return _adminService.CreateHome(homePage);
+        }
+        [HttpPost]
+        [ProducesResponseType(typeof(HomePage), StatusCodes.Status200OK)]
+        [ProducesResponseType(StatusCodes.Status400BadRequest)]
+        [Route("UpdateHome")]
+        public bool UpdateHome(HomePage homePage)
+        {
+            return _adminService.UpdateHome(homePage);
+        }
+        [HttpDelete]
+        [Route("DeleteHome/{id}")]
+        public bool DeleteHome(int id)
+        {
+            return _adminService.DeleteHome(id);
+        }
+        [HttpGet]
+        [Route("GetAllHome")]
+        [ProducesResponseType(typeof(HomeDTO), StatusCodes.Status200OK)]
+        public HomeDTO GetAllHome()
+        {
+            return _adminService.GetAllHome();
+        }
+        [HttpPost]
+        [Route("UploadImageAbout")]
+        public About UploadImageAbout()
+        {
+            try
+            {
+                var Image = Request.Form.Files[0];
+                var ImageName = Guid.NewGuid().ToString() + Image.FileName;
+                var fullPath = Path.Combine("C:\\Users\\moham\\Desktop\\HyperMarket\\src\\assets\\images", ImageName);
+                using (var stream = new FileStream(fullPath, FileMode.Create))
+                {
+                    Image.CopyTo(stream);
+                }
+
+                About About = new About();
+                About.Image = ImageName;
+                return About;
+            }
+            catch
+            {
+                return null;
+            }
+        }
+        [HttpPost]
+        [Route("UploadImageFSlider")]
+        public HomePage UploadImageFSlider()
+        {
+            try
+            {
+                var Image = Request.Form.Files[0];
+                var ImageName = Guid.NewGuid().ToString() + Image.FileName;
+                var fullPath = Path.Combine("C:\\Users\\moham\\Desktop\\HyperMarket\\src\\assets\\images", ImageName);
+                using (var stream = new FileStream(fullPath, FileMode.Create))
+                {
+                    Image.CopyTo(stream);
+                }
+
+                HomePage HomePage = new HomePage();
+                HomePage.FirstSlider = ImageName;
+                return HomePage;
+            }
+            catch
+            {
+                return null;
+            }
+        }
+        [HttpPost]
+        [Route("UploadImageSSlider")]
+        public HomePage UploadImageSSlider()
+        {
+            try
+            {
+                var Image = Request.Form.Files[0];
+                var ImageName = Guid.NewGuid().ToString() + Image.FileName;
+                var fullPath = Path.Combine("C:\\Users\\moham\\Desktop\\HyperMarket\\src\\assets\\images", ImageName);
+                using (var stream = new FileStream(fullPath, FileMode.Create))
+                {
+                    Image.CopyTo(stream);
+                }
+
+                HomePage HomePage = new HomePage();
+                HomePage.SecondSlider = ImageName;
+                return HomePage;
+            }
+            catch
+            {
+                return null;
+            }
+        }
+        [HttpPost]
+        [Route("UploadImageTSlider")]
+        public HomePage UploadImageTSlider()
+        {
+            try
+            {
+                var Image = Request.Form.Files[0];
+                var ImageName = Guid.NewGuid().ToString() + Image.FileName;
+                var fullPath = Path.Combine("C:\\Users\\moham\\Desktop\\HyperMarket\\src\\assets\\images", ImageName);
+                using (var stream = new FileStream(fullPath, FileMode.Create))
+                {
+                    Image.CopyTo(stream);
+                }
+
+                HomePage HomePage = new HomePage();
+                HomePage.ThirdSlider = ImageName;
+                return HomePage;
+            }
+            catch
+            {
+                return null;
+            }
+        }
     }
 }

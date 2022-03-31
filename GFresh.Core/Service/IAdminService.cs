@@ -35,6 +35,22 @@ namespace GFresh.Core.Service
         bool DeleteAdmin(int id);
         List<getAllAdmins> GetAllAdmins();
 
-       
+
+        bool CreateContact(Contact contact);
+        bool UpdateContact(Contact contact);
+        bool DeleteContact(int id);
+        List<ContactDTO> GetAllContact();
+
+
+        bool CreateAbout(About about);
+        bool UpdateAbout(About about);
+        bool DeleteAbout(int id);
+        AboutDTO GetAllAbout();
+
+        bool CreateHome(HomePage homePage);
+        bool UpdateHome(HomePage homePage);
+        bool DeleteHome(int id);
+        HomeDTO GetAllHome();
+
     }
 }

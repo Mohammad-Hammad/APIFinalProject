@@ -10,6 +10,7 @@ namespace GFresh.Core.DTO
         public float TotalPrice { get; set; }
         public DateTime DateFrom { get; set; }
         public DateTime DateTo{ get; set; }
+        public DateTime OrderAt { get; set; }
         public int CustomerID { get; set; }
     }
 }

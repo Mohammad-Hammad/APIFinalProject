@@ -117,5 +117,65 @@ namespace GFresh.Infra.Service
         {
             return _adminRepository.GetAllAdmins();
         }
+
+        public bool CreateContact(Contact contact)
+        {
+            return _adminRepository.CreateContact(contact);
+        }
+
+        public bool UpdateContact(Contact contact)
+        {
+            return _adminRepository.UpdateContact(contact);
+        }
+
+        public bool DeleteContact(int id)
+        {
+            return _adminRepository.DeleteContact(id);
+        }
+
+        public List<ContactDTO> GetAllContact()
+        {
+            return _adminRepository.GetAllContact();
+        }
+
+        public bool CreateAbout(About about)
+        {
+            return _adminRepository.CreateAbout(about);
+        }
+
+        public bool UpdateAbout(About about)
+        {
+            return _adminRepository.UpdateAbout(about);
+        }
+
+        public bool DeleteAbout(int id)
+        {
+            return _adminRepository.DeleteAbout(id);
+        }
+
+        public AboutDTO GetAllAbout()
+        {
+            return _adminRepository.GetAllAbout();
+        }
+
+        public bool CreateHome(HomePage homePage)
+        {
+            return _adminRepository.CreateHome(homePage);
+        }
+
+        public bool UpdateHome(HomePage homePage)
+        {
+            return _adminRepository.UpdateHome(homePage);
+        }
+
+        public bool DeleteHome(int id)
+        {
+            return _adminRepository.DeleteHome(id);
+        }
+
+        public HomeDTO GetAllHome()
+        {
+            return _adminRepository.GetAllHome();
+        }
     }
 }

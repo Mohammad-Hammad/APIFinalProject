@@ -185,5 +185,112 @@ namespace GFresh.Infra.Repository
             IEnumerable<getAllAdmins> result = _dbContext.Connection.Query<getAllAdmins>("Admin_Package.GetAllAdmins", commandType: CommandType.StoredProcedure);
             return result.ToList();
         }
+
+        public bool CreateContact(Contact contact)
+        {
+            var p = new DynamicParameters();
+            p.Add("@Name", contact.Name, dbType: DbType.String);
+            p.Add("@Mail", contact.Email, dbType: DbType.String);
+            p.Add("@Subjct", contact.Subject, dbType: DbType.String);
+            p.Add("@Msg", contact.Message, dbType: DbType.String);
+            var result = _dbContext.Connection.Query<Contact>("Admin_Package.CreateContact", p, commandType: CommandType.StoredProcedure);
+            return true;
+        }
+        public bool UpdateContact(Contact contact)
+        {
+            var p = new DynamicParameters();
+            p.Add("@CID", contact.ContactId, dbType: DbType.Int32);
+            p.Add("@Name", contact.Name, dbType: DbType.String);
+            p.Add("@Mail", contact.Email, dbType: DbType.String);
+            p.Add("@Subjct", contact.Subject, dbType: DbType.String);
+            p.Add("@Msg", contact.Message, dbType: DbType.String);
+            var result = _dbContext.Connection.Query<Contact>("Admin_Package.UpdateContact", p, commandType: CommandType.StoredProcedure);
+            return true;
+        }
+        public bool DeleteContact(int id)
+        {
+            var p = new DynamicParameters();
+            p.Add("@CID", id, dbType: DbType.Int32);
+            var result = _dbContext.Connection.Query<Contact>("Admin_Package.DeleteContact", p, commandType: CommandType.StoredProcedure);
+            return true;
+        }
+        public List<ContactDTO> GetAllContact()
+        {
+            IEnumerable<ContactDTO> result = _dbContext.Connection.Query<ContactDTO>("Admin_Package.GetAllContact", commandType: CommandType.StoredProcedure);
+            return result.ToList();
+        }
+
+
+        public bool CreateAbout(About about)
+        {
+            var p = new DynamicParameters();
+            p.Add("@Image", about.Image, dbType: DbType.String);
+            p.Add("@Ftext", about.FirstText, dbType: DbType.String);
+            p.Add("@Stext", about.SecondText, dbType: DbType.String);
+            var result = _dbContext.Connection.Query<About>("Admin_Package.CreateAbout", p, commandType: CommandType.StoredProcedure);
+            return true;
+        }
+        public bool UpdateAbout(About about)
+        {
+            var p = new DynamicParameters();
+            p.Add("@AboutId", about.Image, dbType: DbType.Int32);
+            p.Add("@Image", about.Image, dbType: DbType.String);
+            p.Add("@Ftext", about.FirstText, dbType: DbType.String);
+            p.Add("@Stext", about.SecondText, dbType: DbType.String);
+            var result = _dbContext.Connection.Query<About>("Admin_Package.UpdateAbout", p, commandType: CommandType.StoredProcedure);
+            return true;
+        }
+        public bool DeleteAbout(int id)
+        {
+            var p = new DynamicParameters();
+            p.Add("@AboutId", id, dbType: DbType.Int32);
+            var result = _dbContext.Connection.Query<About>("Admin_Package.DeleteAbout", p, commandType: CommandType.StoredProcedure);
+            return true;
+        }
+        public AboutDTO GetAllAbout()
+        {
+            IEnumerable<AboutDTO> result = _dbContext.Connection.Query<AboutDTO>("Admin_Package.GetAllAbout", commandType: CommandType.StoredProcedure);
+            return result.SingleOrDefault<AboutDTO>();
+        }
+
+        public bool CreateHome(HomePage homePage)
+        {
+            var p = new DynamicParameters();
+            p.Add("@FirstImg", homePage.FirstSlider, dbType: DbType.String);
+            p.Add("@SecondImg", homePage.SecondSlider, dbType: DbType.String);
+            p.Add("@ThirdImg", homePage.ThirdSlider, dbType: DbType.String);
+            p.Add("@Ftext", homePage.FirstText, dbType: DbType.String);
+            p.Add("@Stext", homePage.SecondText, dbType: DbType.String);
+            p.Add("@Ttext", homePage.CatName, dbType: DbType.String);
+            p.Add("@Frtext", homePage.ProdName, dbType: DbType.String);
+            var result = _dbContext.Connection.Query<HomePage>("Admin_Package.CreateHome", p, commandType: CommandType.StoredProcedure);
+            return true;
+        }
+        public bool UpdateHome(HomePage homePage)
+        {
+            var p = new DynamicParameters();
+            p.Add("@HomeId", homePage.HomeId, dbType: DbType.Int32);
+            p.Add("@FirstImg", homePage.FirstSlider, dbType: DbType.String);
+            p.Add("@SecondImg", homePage.SecondSlider, dbType: DbType.String);
+            p.Add("@ThirdImg", homePage.ThirdSlider, dbType: DbType.String);
+            p.Add("@Ftext", homePage.FirstText, dbType: DbType.String);
+            p.Add("@Stext", homePage.SecondText, dbType: DbType.String);
+            p.Add("@Ttext", homePage.CatName, dbType: DbType.String);
+            p.Add("@Frtext", homePage.ProdName, dbType: DbType.String);
+            var result = _dbContext.Connection.Query<HomePage>("Admin_Package.UpdateHome", p, commandType: CommandType.StoredProcedure);
+            return true;
+        }
+        public bool DeleteHome(int id)
+        {
+            var p = new DynamicParameters();
+            p.Add("@HomeId", id, dbType: DbType.Int32);
+            var result = _dbContext.Connection.Query<HomePage>("Admin_Package.DeleteHome", p, commandType: CommandType.StoredProcedure);
+            return true;
+        }
+        public HomeDTO GetAllHome()
+        {
+            IEnumerable<HomeDTO> result = _dbContext.Connection.Query<HomeDTO>("Admin_Package.GetAllHome", commandType: CommandType.StoredProcedure);
+            return result.SingleOrDefault<HomeDTO>();
+        }
     }
 }
