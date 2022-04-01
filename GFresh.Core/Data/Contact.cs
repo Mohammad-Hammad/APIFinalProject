@@ -12,8 +12,5 @@ namespace GFresh.Core.Data
         public string Email { get; set; }
         public string Subject { get; set; }
         public string Message { get; set; }
-        public int? HomeId { get; set; }
-        [ForeignKey("ProductID")]
-        public virtual HomePage HomePage { get; set; }
     }
 }

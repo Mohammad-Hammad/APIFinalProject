@@ -245,7 +245,7 @@ namespace GFresh.API.Controllers
         {
             return _adminService.CreateContact(contact);
         }
-        [HttpPost]
+        [HttpPut]
         [ProducesResponseType(typeof(List<Contact>), StatusCodes.Status200OK)]
         [ProducesResponseType(StatusCodes.Status400BadRequest)]
         [Route("UpdateContact")]
@@ -274,7 +274,7 @@ namespace GFresh.API.Controllers
         {
             return _adminService.CreateAbout(about);
         }
-        [HttpPost]
+        [HttpPut]
         [ProducesResponseType(typeof(About), StatusCodes.Status200OK)]
         [ProducesResponseType(StatusCodes.Status400BadRequest)]
         [Route("UpdateAbout")]
@@ -303,7 +303,7 @@ namespace GFresh.API.Controllers
         {
             return _adminService.CreateHome(homePage);
         }
-        [HttpPost]
+        [HttpPut]
         [ProducesResponseType(typeof(HomePage), StatusCodes.Status200OK)]
         [ProducesResponseType(StatusCodes.Status400BadRequest)]
         [Route("UpdateHome")]

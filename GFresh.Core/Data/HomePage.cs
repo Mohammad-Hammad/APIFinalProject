@@ -14,8 +14,6 @@ namespace GFresh.Core.Data
         public string SecondText { get; set; }
         public string CatName { get; set; }
         public string ProdName { get; set; }
-        public ICollection<About> Abouts { get; set; }
-        public ICollection<Contact> Contacts { get; set; }
 
     }
 }

@@ -11,9 +11,6 @@ namespace GFresh.Core.Data
         public string Image { get; set; }
         public string FirstText { get; set; }
         public string SecondText { get; set; }
-        public int? HomeId { get; set; }
-        [ForeignKey("ProductID")]
-        public virtual HomePage HomePage { get; set; }
 
     }
 }
