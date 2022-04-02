@@ -3265,19 +3265,19 @@
     ]
   },
   "packageFolders": {
-    "C:\\Users\\moham\\.nuget\\packages\\": {}
+    "C:\\Users\\LEGION\\.nuget\\packages\\": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\moham\\30\\APIFinalProject\\GFresh.Infra\\GFresh.Infra.csproj",
+      "projectUniqueName": "C:\\Users\\LEGION\\OneDrive - Hashemite University\\Desktop\\hyapi\\APIFinalProject\\GFresh.Infra\\GFresh.Infra.csproj",
       "projectName": "GFresh.Infra",
-      "projectPath": "C:\\Users\\moham\\30\\APIFinalProject\\GFresh.Infra\\GFresh.Infra.csproj",
-      "packagesPath": "C:\\Users\\moham\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\moham\\30\\APIFinalProject\\GFresh.Infra\\obj\\",
+      "projectPath": "C:\\Users\\LEGION\\OneDrive - Hashemite University\\Desktop\\hyapi\\APIFinalProject\\GFresh.Infra\\GFresh.Infra.csproj",
+      "packagesPath": "C:\\Users\\LEGION\\.nuget\\packages\\",
+      "outputPath": "C:\\Users\\LEGION\\OneDrive - Hashemite University\\Desktop\\hyapi\\APIFinalProject\\GFresh.Infra\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
-        "C:\\Users\\moham\\AppData\\Roaming\\NuGet\\NuGet.Config",
+        "C:\\Users\\LEGION\\AppData\\Roaming\\NuGet\\NuGet.Config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
       ],
       "originalTargetFrameworks": [
@@ -3291,8 +3291,8 @@
         "netcoreapp3.1": {
           "targetAlias": "netcoreapp3.1",
           "projectReferences": {
-            "C:\\Users\\moham\\30\\APIFinalProject\\GFresh.Core\\GFresh.Core.csproj": {
-              "projectPath": "C:\\Users\\moham\\30\\APIFinalProject\\GFresh.Core\\GFresh.Core.csproj"
+            "C:\\Users\\LEGION\\OneDrive - Hashemite University\\Desktop\\hyapi\\APIFinalProject\\GFresh.Core\\GFresh.Core.csproj": {
+              "projectPath": "C:\\Users\\LEGION\\OneDrive - Hashemite University\\Desktop\\hyapi\\APIFinalProject\\GFresh.Core\\GFresh.Core.csproj"
             }
           }
         }
@@ -3361,7 +3361,7 @@
             "privateAssets": "all"
           }
         },
-        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\6.0.100\\RuntimeIdentifierGraph.json"
+        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\5.0.403\\RuntimeIdentifierGraph.json"
       }
     }
   }

@@ -149,7 +149,60 @@ namespace GFresh.Infra.Repository
             p, commandType: CommandType.StoredProcedure).SingleOrDefault<ViewProfile>();
             return result;
         }
-        
+
+        public List<getCart> getCarts(int customer_id)
+        {
+            var p = new DynamicParameters();
+            p.Add("@customer_Id", customer_id, dbType: DbType.Int32);
+            IEnumerable<getCart> result =
+            _dbContext.Connection.Query<getCart>("User_Package.getcart", p, commandType: CommandType.StoredProcedure);
+            return result.ToList();
+        }
+
+        public bool AddToCarts(getCart getCart)
+        {
+            var p = new DynamicParameters();
+            p.Add("@customer_Id", getCart.customerId, dbType: DbType.Int32);
+            p.Add("@Pro_Id", getCart.ProId, dbType: DbType.Int32);
+          
+
+
+            var result = _dbContext.Connection.Query<getCart>("User_Package.addtocart", p, commandType: CommandType.StoredProcedure);
+            return true;
+        }
+
+        public bool DeletToCarts(getCart getCart)
+        {
+            var p = new DynamicParameters();
+            p.Add("@customer_Id", getCart.customerId, dbType: DbType.Int32);
+            p.Add("@Pro_Id", getCart.ProId, dbType: DbType.Int32);
+
+
+
+            var result = _dbContext.Connection.Query<getCart>("User_Package.deletcart", p, commandType: CommandType.StoredProcedure);
+            return true;
+        }
+
+        public GetTotal GetTotalCustomer(int customer_id)
+        {
+            var p = new DynamicParameters();
+            p.Add("@customer_Id", customer_id, dbType: DbType.Int32);
+
+            var result = _dbContext.Connection.Query<GetTotal>("User_Package.GetTotalCustomer", p, commandType: CommandType.StoredProcedure);
+            return result.FirstOrDefault();
+
+        }
+
+        public bool UpdateQuantity(Updatecart updatecart)
+        {
+            var p = new DynamicParameters();
+            p.Add("@QUAN_TITY", updatecart.Quantity, dbType: DbType.Int32);
+            p.Add("@Pro_Id", updatecart.ProId , dbType: DbType.Int32);
+            p.Add("@customer_Id", updatecart.customerId, dbType: DbType.Int32);
+
+            var result = _dbContext.Connection.Query<Updatecart>("User_Package.updateqauntity", p, commandType: CommandType.StoredProcedure);
+            return true;
+        }
     }
 }
 

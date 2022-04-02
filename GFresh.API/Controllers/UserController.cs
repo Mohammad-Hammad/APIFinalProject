@@ -109,7 +109,7 @@ namespace GFresh.API.Controllers
         [ProducesResponseType(typeof(Credits), StatusCodes.Status200OK)]
         [ProducesResponseType(StatusCodes.Status400BadRequest)]
 
-        public bool CreateCredit([FromBody]Credits newCredites)
+        public bool CreateCredit([FromBody] Credits newCredites)
         {
             return _userServic.CreateCredit(newCredites);
         }
@@ -137,5 +137,49 @@ namespace GFresh.API.Controllers
             }
         }
 
+        [HttpGet]
+        [Route("getcart/{customer_id}")]
+        [ProducesResponseType(typeof(List<getCart>), StatusCodes.Status200OK)]
+        [ProducesResponseType(StatusCodes.Status400BadRequest)]
+        public List<getCart> getCarts(int customer_id)
+        {
+            return _userServic.getCarts(customer_id);
+        }
+
+        [HttpPost]
+        [Route("addtocart")]
+        [ProducesResponseType(typeof(bool), StatusCodes.Status200OK)]
+        [ProducesResponseType(StatusCodes.Status400BadRequest)]
+        public bool AddToCarts([FromBody] getCart getCart)
+        {
+            return _userServic.AddToCarts(getCart);
+        }
+
+        [HttpPost]
+        [Route("deletecart")]
+        [ProducesResponseType(typeof(bool), StatusCodes.Status200OK)]
+        [ProducesResponseType(StatusCodes.Status400BadRequest)]
+        public bool DeletToCarts([FromBody] getCart getCart)
+        {
+            return _userServic.DeletToCarts(getCart);
+        }
+        [HttpGet]
+        [Route("GetTotalCustomer/{customer_id}")]
+        [ProducesResponseType(typeof(GetTotal), StatusCodes.Status200OK)]
+        [ProducesResponseType(StatusCodes.Status400BadRequest)]
+        public GetTotal GetTotalCustomer(int customer_id)
+        {
+            return _userServic.GetTotalCustomer(customer_id);
+
+
+        }
+        [HttpPut]
+        [Route("UpdateQuantity")]
+        [ProducesResponseType(typeof(bool), StatusCodes.Status200OK)]
+        [ProducesResponseType(StatusCodes.Status400BadRequest)]
+        public bool UpdateQuantity([FromBody] Updatecart updatecart)
+        {
+            return _userServic.UpdateQuantity( updatecart);
+        }
     }
-}
+    }

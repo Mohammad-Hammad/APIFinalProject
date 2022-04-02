@@ -66,6 +66,28 @@ namespace GFresh.Infra.Service
         {
             return _userRepository.getAllProduct();
         }
-        
+
+        public List<getCart> getCarts(int customer_id)
+        {
+            return _userRepository.getCarts(customer_id);
+        }
+
+        public bool AddToCarts(getCart getCart)
+        {
+            return _userRepository.AddToCarts(getCart);
+        }
+        public bool DeletToCarts(getCart getCart) {
+            return _userRepository.DeletToCarts(getCart);
+        }
+
+        public GetTotal GetTotalCustomer(int customer_id)
+        {
+            return _userRepository.GetTotalCustomer(customer_id);
+        }
+
+        public bool UpdateQuantity(Updatecart updatecart)
+        {
+            return _userRepository.UpdateQuantity(updatecart);
+        }
     }
 }

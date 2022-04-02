@@ -13,6 +13,12 @@ namespace GFresh.Core.Repository
         public Task<List<Category>> GetAllCategorsAndProduct();
         public List<ProductSearch> SearchOfProduct(Product product);
         public List<ProductSearch> getAllProduct();
+        public List<getCart> getCarts(int customer_id);
+        public bool AddToCarts(getCart getCart);
+        public bool DeletToCarts(getCart getCart);
+        public GetTotal GetTotalCustomer(int customer_id);
+         bool UpdateQuantity(Updatecart updatecart);
+
 
         public List<BillingOrders> PayOrder();
         List<Invoice> DisplayInvoice(int customerId);
@@ -22,6 +28,7 @@ namespace GFresh.Core.Repository
         ViewProfile ViewCustomerProfile(string cus_id);
         bool CreateCredit(Credits newCredites);
 
-      
+
+
     }
 }
