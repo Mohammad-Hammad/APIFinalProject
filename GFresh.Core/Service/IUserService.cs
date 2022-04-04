@@ -28,6 +28,11 @@ namespace GFresh.Core.Service
         ViewProfile ViewCustomerProfile(string cus_id);
         bool CreateCredit(Credits newCredites);
 
+        CreditAmount GetCreditAmount(int customerId);
+
+        bool updateAmount(Credits credits);
+
+
 
     }
 }

@@ -181,5 +181,24 @@ namespace GFresh.API.Controllers
         {
             return _userServic.UpdateQuantity( updatecart);
         }
+
+        [HttpGet]
+        [Route("CreditAmount/{customerId}")]
+        [ProducesResponseType(typeof(CreditAmount), StatusCodes.Status200OK)]
+        [ProducesResponseType(StatusCodes.Status400BadRequest)]
+        public CreditAmount GetCreditAmount(int customerId)
+        {
+            return _userServic.GetCreditAmount(customerId);
+
+
+        }
+        [HttpPut]
+        [Route("UpdateAmount")]
+        [ProducesResponseType(typeof(bool), StatusCodes.Status200OK)]
+        [ProducesResponseType(StatusCodes.Status400BadRequest)]
+        public bool updateAmount([FromBody] Credits credits)
+        {
+            return _userServic.updateAmount(credits);
+        }
     }
     }
