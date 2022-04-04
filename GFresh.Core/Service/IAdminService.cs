@@ -45,12 +45,17 @@ namespace GFresh.Core.Service
         bool CreateAbout(About about);
         bool UpdateAbout(About about);
         bool DeleteAbout(int id);
-        AboutDTO GetAllAbout();
+        List<AboutDTO> GetAllAbout();
 
         bool CreateHome(HomePage homePage);
         bool UpdateHome(HomePage homePage);
         bool DeleteHome(int id);
-        HomeDTO GetAllHome();
+        List<HomeDTO> GetAllHome();
 
+
+        bool CreateSlider(Slider slider);
+        bool UpdateSlider(Slider slider);
+        bool DeleteSlider(int id);
+        List<Slider> GetAllSlider();
     }
 }

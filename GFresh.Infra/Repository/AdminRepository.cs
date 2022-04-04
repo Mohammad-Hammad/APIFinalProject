@@ -233,7 +233,7 @@ namespace GFresh.Infra.Repository
         public bool UpdateAbout(About about)
         {
             var p = new DynamicParameters();
-            p.Add("@AboutId", about.Image, dbType: DbType.Int32);
+            p.Add("@AboutId", about.AboutId, dbType: DbType.Int32);
             p.Add("@Image", about.Image, dbType: DbType.String);
             p.Add("@Ftext", about.FirstText, dbType: DbType.String);
             p.Add("@Stext", about.SecondText, dbType: DbType.String);
@@ -247,18 +247,15 @@ namespace GFresh.Infra.Repository
             var result = _dbContext.Connection.Query<About>("Admin_Package.DeleteAbout", p, commandType: CommandType.StoredProcedure);
             return true;
         }
-        public AboutDTO GetAllAbout()
+        public List<AboutDTO> GetAllAbout()
         {
             IEnumerable<AboutDTO> result = _dbContext.Connection.Query<AboutDTO>("Admin_Package.GetAllAbout", commandType: CommandType.StoredProcedure);
-            return result.SingleOrDefault<AboutDTO>();
+            return result.ToList();
         }
 
         public bool CreateHome(HomePage homePage)
         {
             var p = new DynamicParameters();
-            p.Add("@FirstImg", homePage.FirstSlider, dbType: DbType.String);
-            p.Add("@SecondImg", homePage.SecondSlider, dbType: DbType.String);
-            p.Add("@ThirdImg", homePage.ThirdSlider, dbType: DbType.String);
             p.Add("@Ftext", homePage.FirstText, dbType: DbType.String);
             p.Add("@Stext", homePage.SecondText, dbType: DbType.String);
             p.Add("@Ttext", homePage.CatName, dbType: DbType.String);
@@ -270,9 +267,6 @@ namespace GFresh.Infra.Repository
         {
             var p = new DynamicParameters();
             p.Add("@HomeId", homePage.HomeId, dbType: DbType.Int32);
-            p.Add("@FirstImg", homePage.FirstSlider, dbType: DbType.String);
-            p.Add("@SecondImg", homePage.SecondSlider, dbType: DbType.String);
-            p.Add("@ThirdImg", homePage.ThirdSlider, dbType: DbType.String);
             p.Add("@Ftext", homePage.FirstText, dbType: DbType.String);
             p.Add("@Stext", homePage.SecondText, dbType: DbType.String);
             p.Add("@Ttext", homePage.CatName, dbType: DbType.String);
@@ -287,10 +281,37 @@ namespace GFresh.Infra.Repository
             var result = _dbContext.Connection.Query<HomePage>("Admin_Package.DeleteHome", p, commandType: CommandType.StoredProcedure);
             return true;
         }
-        public HomeDTO GetAllHome()
+        public List<HomeDTO> GetAllHome()
         {
             IEnumerable<HomeDTO> result = _dbContext.Connection.Query<HomeDTO>("Admin_Package.GetAllHome", commandType: CommandType.StoredProcedure);
-            return result.SingleOrDefault<HomeDTO>();
+            return result.ToList();
+        }
+        public bool CreateSlider(Slider slider)
+        {
+            var p = new DynamicParameters();
+            p.Add("@img", slider.Image, dbType: DbType.String);
+            var result = _dbContext.Connection.Query<Slider>("Admin_Package.CreateSlider", p, commandType: CommandType.StoredProcedure);
+            return true;
+        }
+        public bool UpdateSlider(Slider slider)
+        {
+            var p = new DynamicParameters();
+            p.Add("@id", slider.SliderId, dbType: DbType.Int32);
+            p.Add("@img", slider.Image, dbType: DbType.String);
+            var result = _dbContext.Connection.Query<HomePage>("Admin_Package.UpdateSlider", p, commandType: CommandType.StoredProcedure);
+            return true;
+        }
+        public bool DeleteSlider(int id)
+        {
+            var p = new DynamicParameters();
+            p.Add("@id", id, dbType: DbType.Int32);
+            var result = _dbContext.Connection.Query<Slider>("Admin_Package.DeleteSlider", p, commandType: CommandType.StoredProcedure);
+            return true;
+        }
+        public List<Slider> GetAllSlider()
+        {
+            IEnumerable<Slider> result = _dbContext.Connection.Query<Slider>("Admin_Package.GetAllSlider", commandType: CommandType.StoredProcedure);
+            return result.ToList();
         }
     }
 }

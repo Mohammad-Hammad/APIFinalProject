@@ -153,7 +153,7 @@ namespace GFresh.Infra.Service
             return _adminRepository.DeleteAbout(id);
         }
 
-        public AboutDTO GetAllAbout()
+        public List<AboutDTO> GetAllAbout()
         {
             return _adminRepository.GetAllAbout();
         }
@@ -173,9 +173,25 @@ namespace GFresh.Infra.Service
             return _adminRepository.DeleteHome(id);
         }
 
-        public HomeDTO GetAllHome()
+        public List<HomeDTO> GetAllHome()
         {
             return _adminRepository.GetAllHome();
+        }
+        public bool CreateSlider(Slider slider)
+        {
+            return _adminRepository.CreateSlider(slider);
+        }
+        public bool UpdateSlider(Slider slider)
+        {
+            return _adminRepository.UpdateSlider(slider);
+        }
+        public bool DeleteSlider(int id)
+        {
+            return _adminRepository.DeleteSlider(id);
+        }
+        public List<Slider> GetAllSlider()
+        {
+            return _adminRepository.GetAllSlider();
         }
     }
 }

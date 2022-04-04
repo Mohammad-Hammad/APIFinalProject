@@ -3192,19 +3192,19 @@
     ]
   },
   "packageFolders": {
-    "C:\\Users\\LEGION\\.nuget\\packages\\": {}
+    "C:\\Users\\moham\\.nuget\\packages\\": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\LEGION\\OneDrive - Hashemite University\\Desktop\\hyapi\\APIFinalProject\\GFresh.API\\GFresh.API.csproj",
+      "projectUniqueName": "C:\\Users\\moham\\Desktop\\mo_s\\APIFinalProject\\GFresh.API\\GFresh.API.csproj",
       "projectName": "GFresh.API",
-      "projectPath": "C:\\Users\\LEGION\\OneDrive - Hashemite University\\Desktop\\hyapi\\APIFinalProject\\GFresh.API\\GFresh.API.csproj",
-      "packagesPath": "C:\\Users\\LEGION\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\LEGION\\OneDrive - Hashemite University\\Desktop\\hyapi\\APIFinalProject\\GFresh.API\\obj\\",
+      "projectPath": "C:\\Users\\moham\\Desktop\\mo_s\\APIFinalProject\\GFresh.API\\GFresh.API.csproj",
+      "packagesPath": "C:\\Users\\moham\\.nuget\\packages\\",
+      "outputPath": "C:\\Users\\moham\\Desktop\\mo_s\\APIFinalProject\\GFresh.API\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
-        "C:\\Users\\LEGION\\AppData\\Roaming\\NuGet\\NuGet.Config",
+        "C:\\Users\\moham\\AppData\\Roaming\\NuGet\\NuGet.Config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
       ],
       "originalTargetFrameworks": [
@@ -3218,11 +3218,11 @@
         "netcoreapp3.1": {
           "targetAlias": "netcoreapp3.1",
           "projectReferences": {
-            "C:\\Users\\LEGION\\OneDrive - Hashemite University\\Desktop\\hyapi\\APIFinalProject\\GFresh.Core\\GFresh.Core.csproj": {
-              "projectPath": "C:\\Users\\LEGION\\OneDrive - Hashemite University\\Desktop\\hyapi\\APIFinalProject\\GFresh.Core\\GFresh.Core.csproj"
+            "C:\\Users\\moham\\Desktop\\mo_s\\APIFinalProject\\GFresh.Core\\GFresh.Core.csproj": {
+              "projectPath": "C:\\Users\\moham\\Desktop\\mo_s\\APIFinalProject\\GFresh.Core\\GFresh.Core.csproj"
             },
-            "C:\\Users\\LEGION\\OneDrive - Hashemite University\\Desktop\\hyapi\\APIFinalProject\\GFresh.Infra\\GFresh.Infra.csproj": {
-              "projectPath": "C:\\Users\\LEGION\\OneDrive - Hashemite University\\Desktop\\hyapi\\APIFinalProject\\GFresh.Infra\\GFresh.Infra.csproj"
+            "C:\\Users\\moham\\Desktop\\mo_s\\APIFinalProject\\GFresh.Infra\\GFresh.Infra.csproj": {
+              "projectPath": "C:\\Users\\moham\\Desktop\\mo_s\\APIFinalProject\\GFresh.Infra\\GFresh.Infra.csproj"
             }
           }
         }
@@ -3268,7 +3268,7 @@
             "privateAssets": "all"
           }
         },
-        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\5.0.403\\RuntimeIdentifierGraph.json"
+        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\6.0.100\\RuntimeIdentifierGraph.json"
       }
     }
   }

@@ -290,13 +290,13 @@ namespace GFresh.API.Controllers
         }
         [HttpGet]
         [Route("GetAllAbout")]
-        [ProducesResponseType(typeof(AboutDTO), StatusCodes.Status200OK)]
-        public AboutDTO GetAllAbout()
+        [ProducesResponseType(typeof(List<AboutDTO>), StatusCodes.Status200OK)]
+        public List<AboutDTO> GetAllAbout()
         {
             return _adminService.GetAllAbout();
         }
         [HttpPost]
-        [ProducesResponseType(typeof(HomePage), StatusCodes.Status200OK)]
+        [ProducesResponseType(typeof(List<HomePage>), StatusCodes.Status200OK)]
         [ProducesResponseType(StatusCodes.Status400BadRequest)]
         [Route("CreateHome")]
         public bool CreateHome(HomePage homePage)
@@ -304,7 +304,7 @@ namespace GFresh.API.Controllers
             return _adminService.CreateHome(homePage);
         }
         [HttpPut]
-        [ProducesResponseType(typeof(HomePage), StatusCodes.Status200OK)]
+        [ProducesResponseType(typeof(List<HomePage>), StatusCodes.Status200OK)]
         [ProducesResponseType(StatusCodes.Status400BadRequest)]
         [Route("UpdateHome")]
         public bool UpdateHome(HomePage homePage)
@@ -320,7 +320,7 @@ namespace GFresh.API.Controllers
         [HttpGet]
         [Route("GetAllHome")]
         [ProducesResponseType(typeof(HomeDTO), StatusCodes.Status200OK)]
-        public HomeDTO GetAllHome()
+        public List<HomeDTO> GetAllHome()
         {
             return _adminService.GetAllHome();
         }
@@ -332,7 +332,7 @@ namespace GFresh.API.Controllers
             {
                 var Image = Request.Form.Files[0];
                 var ImageName = Guid.NewGuid().ToString() + Image.FileName;
-                var fullPath = Path.Combine("C:\\Users\\moham\\Desktop\\HyperMarket\\src\\assets\\images", ImageName);
+                var fullPath = Path.Combine("C:\\Users\\moham\\Desktop\\Hyper_Market\\src\\assets\\images", ImageName);
                 using (var stream = new FileStream(fullPath, FileMode.Create))
                 {
                     Image.CopyTo(stream);
@@ -348,67 +348,50 @@ namespace GFresh.API.Controllers
             }
         }
         [HttpPost]
-        [Route("UploadImageFSlider")]
-        public HomePage UploadImageFSlider()
+        [ProducesResponseType(typeof(List<Slider>), StatusCodes.Status200OK)]
+        [ProducesResponseType(StatusCodes.Status400BadRequest)]
+        [Route("CreateSlider")]
+        public bool CreateSlider(Slider slider)
         {
-            try
-            {
-                var Image = Request.Form.Files[0];
-                var ImageName = Guid.NewGuid().ToString() + Image.FileName;
-                var fullPath = Path.Combine("C:\\Users\\moham\\Desktop\\HyperMarket\\src\\assets\\images", ImageName);
-                using (var stream = new FileStream(fullPath, FileMode.Create))
-                {
-                    Image.CopyTo(stream);
-                }
-
-                HomePage HomePage = new HomePage();
-                HomePage.FirstSlider = ImageName;
-                return HomePage;
-            }
-            catch
-            {
-                return null;
-            }
+            return _adminService.CreateSlider(slider);
+        }
+        [HttpPut]
+        [ProducesResponseType(typeof(List<Slider>), StatusCodes.Status200OK)]
+        [ProducesResponseType(StatusCodes.Status400BadRequest)]
+        [Route("UpdateSlider")]
+        public bool UpdateSlider(Slider slider)
+        {
+            return _adminService.UpdateSlider(slider);
+        }
+        [HttpDelete]
+        [Route("DeleteSlider/{id}")]
+        public bool DeleteSlider(int id)
+        {
+            return _adminService.DeleteSlider(id);
+        }
+        [HttpGet]
+        [ProducesResponseType(typeof(List<Slider>), StatusCodes.Status200OK)]
+        [Route("GetAllSlider")]
+        public List<Slider> GetAllSlider()
+        {
+            return _adminService.GetAllSlider();
         }
         [HttpPost]
-        [Route("UploadImageSSlider")]
-        public HomePage UploadImageSSlider()
+        [Route("UploadImageSlider")]
+        public Slider UploadImageSlider()
         {
             try
             {
                 var Image = Request.Form.Files[0];
                 var ImageName = Guid.NewGuid().ToString() + Image.FileName;
-                var fullPath = Path.Combine("C:\\Users\\moham\\Desktop\\HyperMarket\\src\\assets\\images", ImageName);
+                var fullPath = Path.Combine("C:\\Users\\moham\\Desktop\\Hyper_Market\\src\\assets\\images", ImageName);
                 using (var stream = new FileStream(fullPath, FileMode.Create))
                 {
                     Image.CopyTo(stream);
                 }
 
-                HomePage HomePage = new HomePage();
-                HomePage.SecondSlider = ImageName;
-                return HomePage;
-            }
-            catch
-            {
-                return null;
-            }
-        }
-        [HttpPost]
-        [Route("UploadImageTSlider")]
-        public HomePage UploadImageTSlider()
-        {
-            try
-            {
-                var Image = Request.Form.Files[0];
-                var ImageName = Guid.NewGuid().ToString() + Image.FileName;
-                var fullPath = Path.Combine("C:\\Users\\moham\\Desktop\\HyperMarket\\src\\assets\\images", ImageName);
-                using (var stream = new FileStream(fullPath, FileMode.Create))
-                {
-                    Image.CopyTo(stream);
-                }
-
-                HomePage HomePage = new HomePage();
-                HomePage.ThirdSlider = ImageName;
+                Slider HomePage = new Slider();
+                HomePage.Image = ImageName;
                 return HomePage;
             }
             catch
