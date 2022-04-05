@@ -342,5 +342,15 @@ namespace GFresh.Infra.Repository
             IEnumerable<TestimonialDTO> result = _dbContext.Connection.Query<TestimonialDTO>("Admin_Package.GetAllTestimonial", commandType: CommandType.StoredProcedure);
             return result.ToList();
         }
+        public List<CommentSearch> SearchOfComment(Testimonial testimonial)
+        {
+            var p = new DynamicParameters();
+            p.Add("@comment_Name", testimonial.Comment, dbType: DbType.String);
+
+            var result = _dbContext.Connection.Query<CommentSearch>
+              ("Admin_Package.SearchOfComment", p,
+              commandType: CommandType.StoredProcedure);
+            return result.ToList();
+        }
     }
 }

@@ -62,5 +62,7 @@ namespace GFresh.Core.Service
         bool UpdateTestimonial(Testimonial testimonial);
         bool DeleteTestimonial(int id);
         List<TestimonialDTO> GetAllTestimonial();
+
+        public List<CommentSearch> SearchOfComment(Testimonial testimonial);
     }
 }

@@ -209,5 +209,9 @@ namespace GFresh.Infra.Service
         {
             return _adminRepository.GetAllTestimonial();
         }
+        public List<CommentSearch> SearchOfComment(Testimonial testimonial)
+        {
+            return _adminRepository.SearchOfComment(testimonial);
+        }
     }
 }
