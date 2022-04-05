@@ -97,3 +97,13 @@ C:\Users\User\Desktop\APIFinalProject\GFresh.Core\obj\Debug\netcoreapp3.1\GFresh
 C:\Users\User\Desktop\APIFinalProject\GFresh.Core\obj\Debug\netcoreapp3.1\GFresh.Core.csproj.CoreCompileInputs.cache
 C:\Users\User\Desktop\APIFinalProject\GFresh.Core\obj\Debug\netcoreapp3.1\GFresh.Core.dll
 C:\Users\User\Desktop\APIFinalProject\GFresh.Core\obj\Debug\netcoreapp3.1\GFresh.Core.pdb
+C:\Users\moham\Desktop\mo_s\sd\APIFinalProject\GFresh.Core\bin\Debug\netcoreapp3.1\GFresh.Core.deps.json
+C:\Users\moham\Desktop\mo_s\sd\APIFinalProject\GFresh.Core\bin\Debug\netcoreapp3.1\GFresh.Core.dll
+C:\Users\moham\Desktop\mo_s\sd\APIFinalProject\GFresh.Core\bin\Debug\netcoreapp3.1\GFresh.Core.pdb
+C:\Users\moham\Desktop\mo_s\sd\APIFinalProject\GFresh.Core\obj\Debug\netcoreapp3.1\GFresh.Core.csproj.AssemblyReference.cache
+C:\Users\moham\Desktop\mo_s\sd\APIFinalProject\GFresh.Core\obj\Debug\netcoreapp3.1\GFresh.Core.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\moham\Desktop\mo_s\sd\APIFinalProject\GFresh.Core\obj\Debug\netcoreapp3.1\GFresh.Core.AssemblyInfoInputs.cache
+C:\Users\moham\Desktop\mo_s\sd\APIFinalProject\GFresh.Core\obj\Debug\netcoreapp3.1\GFresh.Core.AssemblyInfo.cs
+C:\Users\moham\Desktop\mo_s\sd\APIFinalProject\GFresh.Core\obj\Debug\netcoreapp3.1\GFresh.Core.csproj.CoreCompileInputs.cache
+C:\Users\moham\Desktop\mo_s\sd\APIFinalProject\GFresh.Core\obj\Debug\netcoreapp3.1\GFresh.Core.dll
+C:\Users\moham\Desktop\mo_s\sd\APIFinalProject\GFresh.Core\obj\Debug\netcoreapp3.1\GFresh.Core.pdb

@@ -61,6 +61,9 @@ namespace GFresh.Core.Repository
         bool DeleteSlider(int id);
         List<Slider> GetAllSlider();
 
-
+        bool CreateTestimonial(Testimonial testimonial);
+        bool UpdateTestimonial(Testimonial testimonial);
+        bool DeleteTestimonial(int id);
+        List<TestimonialDTO> GetAllTestimonial();
     }
 }

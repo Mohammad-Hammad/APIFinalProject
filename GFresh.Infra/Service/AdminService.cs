@@ -193,5 +193,21 @@ namespace GFresh.Infra.Service
         {
             return _adminRepository.GetAllSlider();
         }
+        public bool CreateTestimonial(Testimonial testimonial)
+        {
+            return _adminRepository.CreateTestimonial(testimonial);
+        }
+        public bool UpdateTestimonial(Testimonial testimonial)
+        {
+            return _adminRepository.UpdateTestimonial(testimonial);
+        }
+        public bool DeleteTestimonial(int id)
+        {
+            return _adminRepository.DeleteTestimonial(id);
+        }
+        public List<TestimonialDTO> GetAllTestimonial()
+        {
+            return _adminRepository.GetAllTestimonial();
+        }
     }
 }

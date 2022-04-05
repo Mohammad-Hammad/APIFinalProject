@@ -313,5 +313,34 @@ namespace GFresh.Infra.Repository
             IEnumerable<Slider> result = _dbContext.Connection.Query<Slider>("Admin_Package.GetAllSlider", commandType: CommandType.StoredProcedure);
             return result.ToList();
         }
+        public bool CreateTestimonial(Testimonial testimonial)
+        {
+            var p = new DynamicParameters();
+            p.Add("@Comment", testimonial.Comment, dbType: DbType.String);
+            p.Add("@CusId", testimonial.CustomerID, dbType: DbType.Int32);
+            var result = _dbContext.Connection.Query<Testimonial>("Admin_Package.CreateTestimonial", p, commandType: CommandType.StoredProcedure);
+            return true;
+        }
+        public bool UpdateTestimonial(Testimonial testimonial)
+        {
+            var p = new DynamicParameters();
+            p.Add("@TID", testimonial.ID, dbType: DbType.Int32);
+            p.Add("@Comment", testimonial.Comment, dbType: DbType.String);
+            p.Add("@CusId", testimonial.CustomerID, dbType: DbType.Int32);
+            var result = _dbContext.Connection.Query<Testimonial>("Admin_Package.UpdateTestimonial", p, commandType: CommandType.StoredProcedure);
+            return true;
+        }
+        public bool DeleteTestimonial(int id)
+        {
+            var p = new DynamicParameters();
+            p.Add("@TID", id, dbType: DbType.Int32);
+            var result = _dbContext.Connection.Query<Testimonial>("Admin_Package.DeleteTestimonial", p, commandType: CommandType.StoredProcedure);
+            return true;
+        }
+        public List<TestimonialDTO> GetAllTestimonial()
+        {
+            IEnumerable<TestimonialDTO> result = _dbContext.Connection.Query<TestimonialDTO>("Admin_Package.GetAllTestimonial", commandType: CommandType.StoredProcedure);
+            return result.ToList();
+        }
     }
 }

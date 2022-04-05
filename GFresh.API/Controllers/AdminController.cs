@@ -399,5 +399,34 @@ namespace GFresh.API.Controllers
                 return null;
             }
         }
+        [HttpPost]
+        [ProducesResponseType(typeof(List<Testimonial>), StatusCodes.Status200OK)]
+        [ProducesResponseType(StatusCodes.Status400BadRequest)]
+        [Route("CreateTestimonial")]
+        public bool CreateTestimonial(Testimonial testimonial)
+        {
+            return _adminService.CreateTestimonial(testimonial);
+        }
+        [HttpPut]
+        [ProducesResponseType(typeof(List<Testimonial>), StatusCodes.Status200OK)]
+        [ProducesResponseType(StatusCodes.Status400BadRequest)]
+        [Route("UpdateTestimonial")]
+        public bool UpdateTestimonial(Testimonial testimonial)
+        {
+            return _adminService.UpdateTestimonial(testimonial);
+        }
+        [HttpDelete]
+        [Route("DeleteTestimonial/{id}")]
+        public bool DeleteTestimonial(int id)
+        {
+            return _adminService.DeleteTestimonial(id);
+        }
+        [HttpGet]
+        [ProducesResponseType(typeof(List<TestimonialDTO>), StatusCodes.Status200OK)]
+        [Route("GetAllTestimonial")]
+        public List<TestimonialDTO> GetAllTestimonial()
+        {
+            return _adminService.GetAllTestimonial();
+        }
     }
 }
