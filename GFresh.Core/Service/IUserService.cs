@@ -32,7 +32,12 @@ namespace GFresh.Core.Service
 
         bool updateAmount(Credits credits);
 
+        bool addOrder(Orders order);
 
+        bool addOrderProduct(OrderProduct orderPro);
+        List<GetOrder> getOrdId(int Cus_Id);
+
+        public bool DeletCustomerCarts(int Cus_Id);
 
     }
 }

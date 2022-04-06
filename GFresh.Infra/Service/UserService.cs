@@ -99,5 +99,25 @@ namespace GFresh.Infra.Service
         {
             return _userRepository.updateAmount(credits);
         }
+
+        public bool addOrder(Orders order)
+        {
+            return _userRepository.addOrder(order);
+        }
+
+        public bool addOrderProduct(OrderProduct orderPro)
+        {
+            return _userRepository.addOrderProduct(orderPro);
+        }
+
+
+        public List<GetOrder> getOrdId(int Cus_Id)
+        {
+            return _userRepository.getOrdId(Cus_Id);
+        }
+        public bool DeletCustomerCarts(int Cus_Id)
+        {
+            return _userRepository.DeletCustomerCarts(Cus_Id);
+        }
     }
 }

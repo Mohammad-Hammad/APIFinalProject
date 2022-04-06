@@ -37,7 +37,8 @@ namespace GFresh.Infra.Repository
             var p = new DynamicParameters();
             p.Add("@customer_id", customerId, dbType: DbType.Int32);
             IEnumerable<Invoice> result =
-            _dbContext.Connection.Query<Invoice>("User_Package.DisplayInvoice", p, commandType: CommandType.StoredProcedure);
+            _dbContext.Connection.Query<Invoice>("User_Package.DisplayInvoice", p,
+            commandType: CommandType.StoredProcedure);
             return result.ToList();
         }
 
@@ -225,6 +226,48 @@ namespace GFresh.Infra.Repository
             return true;
         }
 
+        public bool addOrder(Orders order)
+        {
+            var p = new DynamicParameters();
+            p.Add("@totalPrice", order.TotalPrice, dbType: DbType.Double);
+            p.Add("@customer_Id", order.CustomerID, dbType: DbType.Int32);
+
+            var result = _dbContext.Connection.Query<Orders>("User_Package.addOrder",
+                p, commandType: CommandType.StoredProcedure);
+            return true;
+        }
+
+        public bool addOrderProduct(OrderProduct orderPro)
+        {
+            var p = new DynamicParameters();
+            p.Add("@order_id", orderPro.OrderID, dbType: DbType.Int32);
+            p.Add("@product_id", orderPro.ProductID, dbType: DbType.Int32);
+
+            var result = _dbContext.Connection.Query<OrderProduct>("User_Package.addOrderProduct",
+                p, commandType: CommandType.StoredProcedure);
+            return true;
+        }
+
+        public List<GetOrder> getOrdId(int Cus_Id)
+        {
+            var p = new DynamicParameters();
+            p.Add("@customer_Id", Cus_Id, dbType: DbType.Int32);
+
+            IEnumerable<GetOrder> result =
+                _dbContext.Connection.Query<GetOrder>("User_Package.getOrdersId",
+                p, commandType: CommandType.StoredProcedure);
+            return result.ToList();
+        }
+
+
+        public bool DeletCustomerCarts(int Cus_Id)
+        {
+            var p = new DynamicParameters();
+            p.Add("@customer_Id", Cus_Id, dbType: DbType.Int32);
+            var result = _dbContext.Connection.Query<getCart>("User_Package.deletCustomerCart",
+                p, commandType: CommandType.StoredProcedure);
+            return true;
+        }
 
     }
 }

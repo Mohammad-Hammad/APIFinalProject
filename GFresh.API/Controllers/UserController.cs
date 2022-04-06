@@ -200,5 +200,43 @@ namespace GFresh.API.Controllers
         {
             return _userServic.updateAmount(credits);
         }
+
+        [HttpPost]
+        [Route("addOrder")]
+        [ProducesResponseType(typeof(Orders), StatusCodes.Status200OK)]
+        [ProducesResponseType(StatusCodes.Status400BadRequest)]
+        public bool addOrder([FromBody] Orders order)
+        {
+            return _userServic.addOrder(order);
+        }
+
+        [HttpPost]
+        [Route("orderProduct")]
+        [ProducesResponseType(typeof(OrderProduct), StatusCodes.Status200OK)]
+        [ProducesResponseType(StatusCodes.Status400BadRequest)]
+        public bool addOrderProduct([FromBody] OrderProduct orderPro)
+        {
+            return _userServic.addOrderProduct(orderPro);
+        }
+
+
+        [HttpGet]
+        [Route("getOrderId/{Cus_Id}")]
+        [ProducesResponseType(typeof(List<GetOrder>), StatusCodes.Status200OK)]
+        [ProducesResponseType(StatusCodes.Status400BadRequest)]
+        public List<GetOrder> getOrdId(int Cus_Id)
+        {
+            return _userServic.getOrdId(Cus_Id);
+        }
+
+
+        [HttpDelete]
+        [Route("deletecustomercarts/{Cus_Id}")]
+        [ProducesResponseType(typeof(bool), StatusCodes.Status200OK)]
+        [ProducesResponseType(StatusCodes.Status400BadRequest)]
+        public bool DeletCustomerCarts(int Cus_Id)
+        {
+            return _userServic.DeletCustomerCarts(Cus_Id);
+        }
     }
     }
