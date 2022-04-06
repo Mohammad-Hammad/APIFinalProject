@@ -428,5 +428,13 @@ namespace GFresh.API.Controllers
         {
             return _adminService.GetAllTestimonial();
         }
+        [HttpPost]
+        [Route("SearchOfComment")]
+        [ProducesResponseType(typeof(List<CommentSearch>), StatusCodes.Status200OK)]
+        [ProducesResponseType(StatusCodes.Status400BadRequest)]
+        public List<CommentSearch> SearchOfComment(Testimonial testimonial)
+        {
+            return _adminService.SearchOfComment(testimonial);
+        }
     }
 }
