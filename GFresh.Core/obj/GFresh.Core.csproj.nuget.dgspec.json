@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\User\\Desktop\\APIFinalProject\\GFresh.Core\\GFresh.Core.csproj": {}
+    "C:\\Users\\User\\source\\repos\\APIFinalProject\\GFresh.Core\\GFresh.Core.csproj": {}
   },
   "projects": {
-    "C:\\Users\\User\\Desktop\\APIFinalProject\\GFresh.Core\\GFresh.Core.csproj": {
+    "C:\\Users\\User\\source\\repos\\APIFinalProject\\GFresh.Core\\GFresh.Core.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\User\\Desktop\\APIFinalProject\\GFresh.Core\\GFresh.Core.csproj",
+        "projectUniqueName": "C:\\Users\\User\\source\\repos\\APIFinalProject\\GFresh.Core\\GFresh.Core.csproj",
         "projectName": "GFresh.Core",
-        "projectPath": "C:\\Users\\User\\Desktop\\APIFinalProject\\GFresh.Core\\GFresh.Core.csproj",
+        "projectPath": "C:\\Users\\User\\source\\repos\\APIFinalProject\\GFresh.Core\\GFresh.Core.csproj",
         "packagesPath": "C:\\Users\\User\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\User\\Desktop\\APIFinalProject\\GFresh.Core\\obj\\",
+        "outputPath": "C:\\Users\\User\\source\\repos\\APIFinalProject\\GFresh.Core\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\User\\AppData\\Roaming\\NuGet\\NuGet.Config",

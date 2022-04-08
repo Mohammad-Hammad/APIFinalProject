@@ -184,9 +184,9 @@ namespace GFresh.API.Controllers
 
         [HttpGet]
         [Route("CreditAmount/{customerId}")]
-        [ProducesResponseType(typeof(CreditAmount), StatusCodes.Status200OK)]
+        [ProducesResponseType(typeof(List<CreditAmount>), StatusCodes.Status200OK)]
         [ProducesResponseType(StatusCodes.Status400BadRequest)]
-        public CreditAmount GetCreditAmount(int customerId)
+        public List<CreditAmount> GetCreditAmount(int customerId)
         {
             return _userServic.GetCreditAmount(customerId);
 

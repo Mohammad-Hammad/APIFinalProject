@@ -90,7 +90,7 @@ namespace GFresh.Infra.Service
             return _userRepository.UpdateQuantity(updatecart);
         }
 
-        public CreditAmount GetCreditAmount(int customerId)
+        public List<CreditAmount> GetCreditAmount(int customerId)
         {
             return _userRepository.GetCreditAmount(customerId);
         }

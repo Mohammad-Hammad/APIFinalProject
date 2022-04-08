@@ -203,23 +203,24 @@ namespace GFresh.Infra.Repository
             var result = _dbContext.Connection.Query<Updatecart>("User_Package.updateqauntity", p, commandType: CommandType.StoredProcedure);
             return true;
         }
-        public CreditAmount GetCreditAmount(int customerId)
+        public List<CreditAmount> GetCreditAmount(int customerId)
         {
 
             var p = new DynamicParameters();
             p.Add("@customer_id", customerId, dbType: DbType.Int32);
-            var result =
+
+            IEnumerable<CreditAmount> result =
            _dbContext.Connection.Query<CreditAmount>("User_Package.GETCREDITAMOUNT",
             p, commandType: CommandType.StoredProcedure);
-            return result.FirstOrDefault();
+            return result.ToList();
         }
 
         public bool updateAmount(Credits credits)
         {
             var p = new DynamicParameters();
             p.Add("@cus_amount", credits.Amount, dbType: DbType.Int32);
-            p.Add("@customer_Id", credits.CustomerID, dbType: DbType.String);
-
+            p.Add("@customer_Id", credits.CustomerID, dbType: DbType.Int32);
+            p.Add("@card_id", credits.CardID, dbType: DbType.Int32);
 
 
             var result = _dbContext.Connection.Query<Credits>("User_Package.updateAmount", p, commandType: CommandType.StoredProcedure);

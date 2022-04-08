@@ -4,9 +4,7 @@ using System.Text;
 
 namespace GFresh.Core.DTO
 {
-   public class CreditAmount
+    class GetCardAmount
     {
-        public float Amount { get; set; }
-        public int CardID { get; set; }
     }
 }

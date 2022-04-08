@@ -28,7 +28,7 @@ namespace GFresh.Core.Repository
         ViewProfile ViewCustomerProfile(string cus_id);
         bool CreateCredit(Credits newCredites);
 
-        CreditAmount GetCreditAmount(int customerId);
+       List<CreditAmount>   GetCreditAmount(int customerId);
 
         bool updateAmount(Credits credits);
 

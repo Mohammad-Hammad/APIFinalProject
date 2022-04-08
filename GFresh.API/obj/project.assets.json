@@ -3197,11 +3197,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\User\\Desktop\\APIFinalProject\\GFresh.API\\GFresh.API.csproj",
+      "projectUniqueName": "C:\\Users\\User\\source\\repos\\APIFinalProject\\GFresh.API\\GFresh.API.csproj",
       "projectName": "GFresh.API",
-      "projectPath": "C:\\Users\\User\\Desktop\\APIFinalProject\\GFresh.API\\GFresh.API.csproj",
+      "projectPath": "C:\\Users\\User\\source\\repos\\APIFinalProject\\GFresh.API\\GFresh.API.csproj",
       "packagesPath": "C:\\Users\\User\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\User\\Desktop\\APIFinalProject\\GFresh.API\\obj\\",
+      "outputPath": "C:\\Users\\User\\source\\repos\\APIFinalProject\\GFresh.API\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
         "C:\\Users\\User\\AppData\\Roaming\\NuGet\\NuGet.Config",
@@ -3218,11 +3218,11 @@
         "netcoreapp3.1": {
           "targetAlias": "netcoreapp3.1",
           "projectReferences": {
-            "C:\\Users\\User\\Desktop\\APIFinalProject\\GFresh.Core\\GFresh.Core.csproj": {
-              "projectPath": "C:\\Users\\User\\Desktop\\APIFinalProject\\GFresh.Core\\GFresh.Core.csproj"
+            "C:\\Users\\User\\source\\repos\\APIFinalProject\\GFresh.Core\\GFresh.Core.csproj": {
+              "projectPath": "C:\\Users\\User\\source\\repos\\APIFinalProject\\GFresh.Core\\GFresh.Core.csproj"
             },
-            "C:\\Users\\User\\Desktop\\APIFinalProject\\GFresh.Infra\\GFresh.Infra.csproj": {
-              "projectPath": "C:\\Users\\User\\Desktop\\APIFinalProject\\GFresh.Infra\\GFresh.Infra.csproj"
+            "C:\\Users\\User\\source\\repos\\APIFinalProject\\GFresh.Infra\\GFresh.Infra.csproj": {
+              "projectPath": "C:\\Users\\User\\source\\repos\\APIFinalProject\\GFresh.Infra\\GFresh.Infra.csproj"
             }
           }
         }
