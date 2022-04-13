@@ -38,6 +38,7 @@ namespace GFresh.Core.Service
         List<GetOrder> getOrdId(int Cus_Id);
 
         public bool DeletCustomerCarts(int Cus_Id);
+        List<TestimonialDTO> GetAllTestimonial();
 
     }
 }

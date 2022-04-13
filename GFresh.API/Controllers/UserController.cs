@@ -238,5 +238,12 @@ namespace GFresh.API.Controllers
         {
             return _userServic.DeletCustomerCarts(Cus_Id);
         }
+        [HttpGet]
+        [ProducesResponseType(typeof(List<TestimonialDTO>), StatusCodes.Status200OK)]
+        [Route("GetAllTestimonial")]
+        public List<TestimonialDTO> GetAllTestimonial()
+        {
+            return _userServic.GetAllTestimonial();
+        }
     }
     }

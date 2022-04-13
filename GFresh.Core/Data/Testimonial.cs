@@ -13,6 +13,8 @@ namespace GFresh.Core.Data
         public string Comment { get; set; }
         public int? CustomerID { get; set; }
         [ForeignKey("CustomerID")]
+
+        public string Status { get; set; }
         public virtual Customer Customers { get; set; }
     }
 }

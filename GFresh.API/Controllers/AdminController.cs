@@ -422,9 +422,9 @@ namespace GFresh.API.Controllers
             return _adminService.DeleteTestimonial(id);
         }
         [HttpGet]
-        [ProducesResponseType(typeof(List<TestimonialDTO>), StatusCodes.Status200OK)]
+        [ProducesResponseType(typeof(List<TestimonialDTOAdmin>), StatusCodes.Status200OK)]
         [Route("GetAllTestimonial")]
-        public List<TestimonialDTO> GetAllTestimonial()
+        public List<TestimonialDTOAdmin> GetAllTestimonial()
         {
             return _adminService.GetAllTestimonial();
         }

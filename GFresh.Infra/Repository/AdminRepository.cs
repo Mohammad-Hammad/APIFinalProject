@@ -257,9 +257,6 @@ namespace GFresh.Infra.Repository
         {
             var p = new DynamicParameters();
             p.Add("@Ftext", homePage.FirstText, dbType: DbType.String);
-            p.Add("@Stext", homePage.SecondText, dbType: DbType.String);
-            p.Add("@Ttext", homePage.CatName, dbType: DbType.String);
-            p.Add("@Frtext", homePage.ProdName, dbType: DbType.String);
             var result = _dbContext.Connection.Query<HomePage>("Admin_Package.CreateHome", p, commandType: CommandType.StoredProcedure);
             return true;
         }
@@ -268,9 +265,6 @@ namespace GFresh.Infra.Repository
             var p = new DynamicParameters();
             p.Add("@HomeId", homePage.HomeId, dbType: DbType.Int32);
             p.Add("@Ftext", homePage.FirstText, dbType: DbType.String);
-            p.Add("@Stext", homePage.SecondText, dbType: DbType.String);
-            p.Add("@Ttext", homePage.CatName, dbType: DbType.String);
-            p.Add("@Frtext", homePage.ProdName, dbType: DbType.String);
             var result = _dbContext.Connection.Query<HomePage>("Admin_Package.UpdateHome", p, commandType: CommandType.StoredProcedure);
             return true;
         }
@@ -325,8 +319,7 @@ namespace GFresh.Infra.Repository
         {
             var p = new DynamicParameters();
             p.Add("@TID", testimonial.ID, dbType: DbType.Int32);
-            p.Add("@Comment", testimonial.Comment, dbType: DbType.String);
-            p.Add("@CusId", testimonial.CustomerID, dbType: DbType.Int32);
+            p.Add("@st", testimonial.Status, dbType: DbType.String);
             var result = _dbContext.Connection.Query<Testimonial>("Admin_Package.UpdateTestimonial", p, commandType: CommandType.StoredProcedure);
             return true;
         }
@@ -337,9 +330,9 @@ namespace GFresh.Infra.Repository
             var result = _dbContext.Connection.Query<Testimonial>("Admin_Package.DeleteTestimonial", p, commandType: CommandType.StoredProcedure);
             return true;
         }
-        public List<TestimonialDTO> GetAllTestimonial()
+        public List<TestimonialDTOAdmin> GetAllTestimonial()
         {
-            IEnumerable<TestimonialDTO> result = _dbContext.Connection.Query<TestimonialDTO>("Admin_Package.GetAllTestimonial", commandType: CommandType.StoredProcedure);
+            IEnumerable<TestimonialDTOAdmin> result = _dbContext.Connection.Query<TestimonialDTOAdmin>("Admin_Package.GetAllTestimonial", commandType: CommandType.StoredProcedure);
             return result.ToList();
         }
         public List<CommentSearch> SearchOfComment(Testimonial testimonial)

@@ -269,7 +269,11 @@ namespace GFresh.Infra.Repository
                 p, commandType: CommandType.StoredProcedure);
             return true;
         }
-
+        public List<TestimonialDTO> GetAllTestimonial()
+        {
+            IEnumerable<TestimonialDTO> result = _dbContext.Connection.Query<TestimonialDTO>("User_Package.GetAllTestimonial", commandType: CommandType.StoredProcedure);
+            return result.ToList();
+        }
     }
 }
 

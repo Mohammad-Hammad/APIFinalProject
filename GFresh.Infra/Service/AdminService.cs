@@ -205,7 +205,7 @@ namespace GFresh.Infra.Service
         {
             return _adminRepository.DeleteTestimonial(id);
         }
-        public List<TestimonialDTO> GetAllTestimonial()
+        public List<TestimonialDTOAdmin> GetAllTestimonial()
         {
             return _adminRepository.GetAllTestimonial();
         }

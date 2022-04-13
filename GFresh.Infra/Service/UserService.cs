@@ -119,5 +119,9 @@ namespace GFresh.Infra.Service
         {
             return _userRepository.DeletCustomerCarts(Cus_Id);
         }
+        public List<TestimonialDTO> GetAllTestimonial()
+        {
+            return _userRepository.GetAllTestimonial();
+        }
     }
 }

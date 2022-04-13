@@ -39,5 +39,7 @@ namespace GFresh.Core.Repository
         List<GetOrder> getOrdId(int Cus_Id);
 
         public bool DeletCustomerCarts(int Cus_Id);
+
+        List<TestimonialDTO> GetAllTestimonial();
     }
 }
