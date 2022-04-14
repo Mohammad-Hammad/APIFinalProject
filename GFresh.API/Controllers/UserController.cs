@@ -121,7 +121,7 @@ namespace GFresh.API.Controllers
             {
                 var Image = Request.Form.Files[0];
                 var ImageName = Guid.NewGuid().ToString() + Image.FileName;
-                var fullPath = Path.Combine(@"C:\Users\User\Desktop\Hyper_Market\src\assets\images", ImageName);
+                var fullPath = Path.Combine("C:\\Users\\LEGION\\OneDrive - Hashemite University\\Desktop\\hyperFinall\\Hyper_Market\\src\\assets\\images", ImageName);
                 using (var stream = new FileStream(fullPath, FileMode.Create))
                 {
                     Image.CopyTo(stream);
